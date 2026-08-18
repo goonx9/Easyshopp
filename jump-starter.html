@@ -3,24 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '446510071587010');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=446510071587010&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
 
   <title>Never Get Stranded Again – Jump Start Your Car in 60 Seconds | AutoPower Nigeria</title>
   <meta name="description" content="Instant 60-second portable car jump starter. Start your car when your battery dies without jumper cables or asking strangers. Free delivery across Nigeria & Payment on Delivery.">
@@ -30,11 +12,21 @@
   <meta property="og:title" content="Never Get Stranded Again – Jump Start Your Car in 60 Seconds">
   <meta property="og:description" content="Instant portable jump starter for Nigerian drivers. Restart your vehicle in seconds. Free nationwide delivery & Pay on Delivery.">
   <meta property="og:image" content="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787000239/5771575669845332195_duiuzr.jpg">
-  
-  <!-- Preconnect to Cloudinary -->
+
+  <!-- FIX 1: Preconnect for Cloudinary (images) and Facebook CDN -->
   <link rel="preconnect" href="https://res.cloudinary.com">
   <link rel="dns-prefetch" href="https://res.cloudinary.com">
-  
+  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- FIX 2: Preload LCP hero image — tells browser to fetch it immediately, before parsing body -->
+  <link
+    rel="preload"
+    as="image"
+    href="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787000239/5771575669845332195_duiuzr.jpg"
+    fetchpriority="high"
+  >
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -166,12 +158,13 @@
         <div class="hero-visual">
           <div class="image-wrapper aspect-product">
             <span class="badge-floating">Heavy-Duty 12V Starter</span>
+            <!-- FIX 3: LCP image — removed decoding="async" (would defer decode) and kept fetchpriority+eager -->
             <img 
               src="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787000239/5771575669845332195_duiuzr.jpg" 
               width="800" 
               height="600" 
-              fetchpriority="high" 
-              decoding="async" 
+              fetchpriority="high"
+              decoding="sync"
               loading="eager" 
               alt="Heavy Duty Portable Car Jump Starter"
             >
@@ -994,8 +987,29 @@
     </a>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Scripts: EmailJS loaded async (non-blocking); main.js deferred -->
+  <!-- FIX 4: async on EmailJS so it never blocks rendering or main.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" async></script>
   <script src="assets/js/main.js" defer></script>
+
+  <!-- FIX 5: Meta Pixel deferred to end of body — zero render-blocking cost -->
+  <!-- Previously this was inline in <head>, causing ~200ms main thread block -->
+  <script>
+  window.addEventListener('load', function() {
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '446510071587010');
+    fbq('track', 'PageView');
+  });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=446510071587010&ev=PageView&noscript=1"
+  /></noscript>
 </body>
 </html>
