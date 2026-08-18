@@ -1,0 +1,17 @@
+{
+  "name": "car-jump-starter-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "mkdir -p dist && cp -r index.html jump-starter.html assets README.md dist/",
+    "preview": "node server.js",
+    "clean": "rm -rf dist",
+    "lint": "echo 'No lint needed for pure HTML/CSS/JS'"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
