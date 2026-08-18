@@ -439,6 +439,7 @@ function initOrderForm() {
     const fullName = document.getElementById('fullName')?.value.trim();
     const phone = document.getElementById('phone')?.value.trim();
     const whatsapp = document.getElementById('whatsapp')?.value.trim() || phone;
+    const altPhone = document.getElementById('altPhone')?.value.trim() || '';
     const state = document.getElementById('state')?.value;
     const city = document.getElementById('city')?.value.trim();
     const address = document.getElementById('address')?.value.trim();
@@ -471,7 +472,7 @@ function initOrderForm() {
 
     const orderData = {
       orderId: orderId,
-      customer: { fullName, phone, whatsapp, state, city, address },
+      customer: { fullName, phone, whatsapp, altPhone, state, city, address },
       product: {
         id: product.id,
         name: product.name,
@@ -518,6 +519,9 @@ function initOrderForm() {
           phone: phone,
           customer_whatsapp: whatsapp,
           whatsapp: whatsapp,
+          alt_phone: altPhone || 'N/A',
+          altPhone: altPhone || 'N/A',
+          alternative_phone: altPhone || 'N/A',
           
           // Location & Address
           delivery_address: `${address}, ${city}, ${state} State`,
@@ -573,7 +577,7 @@ function initOrderForm() {
     }
 
     /* --------------------------------------------------------------------------
-       Direct WhatsApp Dispatch Hook for Nigerian Operations
+       Direct WhatsApp Dispatch Hook for Nigerian Operations (08039940408)
        -------------------------------------------------------------------------- */
     const whatsappMessage = encodeURIComponent(
       `*NEW ORDER - CAR JUMP STARTER*\n` +
@@ -583,6 +587,7 @@ function initOrderForm() {
       `👤 *Full Name:* ${fullName}\n` +
       `📞 *Phone:* ${phone}\n` +
       `💬 *WhatsApp:* ${whatsapp}\n` +
+      (altPhone ? `📱 *Alt Phone:* ${altPhone}\n` : '') +
       `📍 *Delivery Address:* ${address}, ${city}, ${state} State\n` +
       `💳 *Payment Terms:* Pay on Delivery\n\n` +
       `Please confirm my delivery dispatch.`
@@ -602,7 +607,7 @@ function initOrderForm() {
           Thank you, <strong>${fullName}</strong>. Your order for the <strong>${product.variant} Car Jump Starter (Qty: ${currentQuantity})</strong> has been logged. Our dispatch team will call or message you on <strong>${phone}</strong> shortly before delivery to <strong>${city}, ${state}</strong>.
         </p>
         <div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 360px; margin: 0 auto;">
-          <a href="https://wa.me/2348000000000?text=${whatsappMessage}" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-full" style="background-color: #25D366; color: #ffffff;">
+          <a href="https://wa.me/2348039940408?text=${whatsappMessage}" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-full" style="background-color: #25D366; color: #ffffff;">
             Confirm Instantly on WhatsApp
           </a>
           <a href="#hero" class="btn btn-outline btn-sm">Back to Top</a>

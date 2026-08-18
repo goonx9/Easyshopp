@@ -893,15 +893,19 @@
                 <input class="form-input" type="text" id="fullName" placeholder="e.g. Babatunde Adeleke" required autocomplete="name">
               </div>
 
-              <!-- Phone Numbers -->
-              <div class="form-grid-2 form-grid">
+              <!-- Phone Numbers & WhatsApp -->
+              <div class="form-grid-3 form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                 <div class="form-group">
-                  <label class="form-label" for="phone">Phone Number (For Call & SMS) *</label>
+                  <label class="form-label" for="phone">Phone Number (Call / SMS) *</label>
                   <input class="form-input" type="tel" id="phone" placeholder="e.g. 08012345678" required autocomplete="tel">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="whatsapp">WhatsApp Number (For Delivery Updates)</label>
-                  <input class="form-input" type="tel" id="whatsapp" placeholder="e.g. 08012345678" autocomplete="tel">
+                  <label class="form-label" for="whatsapp">WhatsApp Number *</label>
+                  <input class="form-input" type="tel" id="whatsapp" placeholder="e.g. 08039940408" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="altPhone">Alternative Phone Number (Optional)</label>
+                  <input class="form-input" type="tel" id="altPhone" placeholder="e.g. 09087654321" autocomplete="tel">
                 </div>
               </div>
 

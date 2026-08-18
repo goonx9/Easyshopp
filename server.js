@@ -29,7 +29,7 @@ app.post('/api/submit-order', (req, res) => {
   console.log('====================================================');
   console.log('🚗 NEW CAR JUMP STARTER ORDER RECEIVED');
   console.log(`Order Ref: ${order.orderId || 'N/A'}`);
-  console.log(`Customer: ${order.customer?.fullName || 'N/A'} | Phone: ${order.customer?.phone || 'N/A'} | WhatsApp: ${order.customer?.whatsapp || 'N/A'}`);
+  console.log(`Customer: ${order.customer?.fullName || 'N/A'} | Phone: ${order.customer?.phone || 'N/A'} | WhatsApp: ${order.customer?.whatsapp || 'N/A'}${order.customer?.altPhone ? ` | Alt: ${order.customer.altPhone}` : ''}`);
   console.log(`Address: ${order.customer?.address || ''}, ${order.customer?.city || ''}, ${order.customer?.state || ''}`);
   console.log(`Product: ${order.product?.name || order.product?.variant || 'Standard'} (Qty: ${order.product?.quantity || 1})`);
   console.log(`Total: ₦${(order.total || 0).toLocaleString()}`);
