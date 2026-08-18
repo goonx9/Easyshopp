@@ -14,6 +14,17 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.json());
+
+// Public EmailJS config endpoint to pass environment variables safely to client
+app.get('/api/emailjs-config', (req, res) => {
+  res.json({
+    serviceId: process.env.EMAILJS_SERVICE_ID || process.env.VITE_EMAILJS_SERVICE_ID || '',
+    templateId: process.env.EMAILJS_TEMPLATE_ID || process.env.VITE_EMAILJS_TEMPLATE_ID || '',
+    publicKey: process.env.EMAILJS_PUBLIC_KEY || process.env.VITE_EMAILJS_PUBLIC_KEY || ''
+  });
+});
+
 // Explicit routes for GitHub Pages style routing
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));

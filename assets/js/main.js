@@ -4,7 +4,15 @@
  * Conversion-focused Direct-Response Landing Page Engine
  */
 
+// EmailJS Configuration Object
+const EMAILJS_CONFIG = {
+  serviceId: window.EMAILJS_SERVICE_ID || '',
+  templateId: window.EMAILJS_TEMPLATE_ID || '',
+  publicKey: window.EMAILJS_PUBLIC_KEY || ''
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+  initEmailJS();
   initMobileNav();
   initVideoPlayers();
   initFaqAccordion();
@@ -13,6 +21,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initOrderForm();
   initMetaPixelTracking();
 });
+
+/**
+ * Initialize EmailJS SDK
+ * Safely fetches public config from backend if available, or uses window constants
+ */
+async function initEmailJS() {
+  if (!EMAILJS_CONFIG.publicKey) {
+    try {
+      const res = await fetch('/api/emailjs-config');
+      if (res.ok) {
+        const data = await res.json();
+        if (data.serviceId) EMAILJS_CONFIG.serviceId = data.serviceId;
+        if (data.templateId) EMAILJS_CONFIG.templateId = data.templateId;
+        if (data.publicKey) EMAILJS_CONFIG.publicKey = data.publicKey;
+      }
+    } catch (err) {
+      // Running statically without server endpoint
+    }
+  }
+
+  if (typeof window.emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey) {
+    try {
+      window.emailjs.init({
+        publicKey: EMAILJS_CONFIG.publicKey
+      });
+      console.log('EmailJS initialized successfully.');
+    } catch (e) {
+      console.warn('EmailJS initialization warning:', e);
+    }
+  }
+}
 
 /* ==========================================================================
    1. REUSABLE CLICK-TO-LOAD VIDEO COMPONENT
@@ -342,7 +381,7 @@ function initOrderForm() {
   // Initialize summary display
   updateOrderSummary();
 
-  orderForm.addEventListener('submit', function (e) {
+  orderForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const fullName = document.getElementById('fullName')?.value.trim();
@@ -357,10 +396,29 @@ function initOrderForm() {
       return;
     }
 
+    const submitBtn = orderForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <span style="display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;">
+          <svg style="animation: spin 1s linear infinite; width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-linecap="round"></path></svg>
+          Processing Order...
+        </span>
+      `;
+    }
+
     const product = PRODUCTS[currentVariantKey] || PRODUCTS['standard'];
     const totalAmount = product.price * currentQuantity;
+    const orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+    const dateFormatted = new Date().toLocaleString('en-GB', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+      timeZone: 'Africa/Lagos'
+    });
 
     const orderData = {
+      orderId: orderId,
       customer: { fullName, phone, whatsapp, state, city, address },
       product: {
         id: product.id,
@@ -377,7 +435,42 @@ function initOrderForm() {
 
     console.log('New Order Placed:', orderData);
 
-    // Track Meta Pixel Lead & Purchase
+    // 1. Send Email Notification via EmailJS
+    if (typeof window.emailjs !== 'undefined' && EMAILJS_CONFIG.serviceId && EMAILJS_CONFIG.templateId && EMAILJS_CONFIG.publicKey) {
+      try {
+        const templateParams = {
+          order_id: orderId,
+          to_name: 'Store Admin',
+          customer_name: fullName,
+          customer_phone: phone,
+          customer_whatsapp: whatsapp,
+          delivery_address: `${address}, ${city}, ${state} State`,
+          customer_state: state,
+          customer_city: city,
+          customer_street: address,
+          package_edition: `${product.variant} Edition`,
+          quantity: currentQuantity,
+          unit_price: `₦${product.price.toLocaleString()}`,
+          total_amount: `₦${totalAmount.toLocaleString()}`,
+          payment_method: 'Payment on Delivery',
+          order_date: dateFormatted
+        };
+
+        await window.emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.templateId,
+          templateParams,
+          EMAILJS_CONFIG.publicKey
+        );
+        console.log('EmailJS: Order notification email dispatched successfully.');
+      } catch (emailErr) {
+        console.warn('EmailJS dispatch notice:', emailErr);
+      }
+    } else {
+      console.info('EmailJS: Configuration credentials pending in .env or window.EMAILJS_CONFIG.');
+    }
+
+    // 2. Track Meta Pixel Lead & Purchase
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', {
         content_name: `${product.variant} Car Jump Starter`,
@@ -396,7 +489,8 @@ function initOrderForm() {
        Direct WhatsApp Dispatch Hook for Nigerian Operations
        -------------------------------------------------------------------------- */
     const whatsappMessage = encodeURIComponent(
-      `*NEW ORDER - CAR JUMP STARTER*\n\n` +
+      `*NEW ORDER - CAR JUMP STARTER*\n` +
+      `🔖 *Order Ref:* #${orderId}\n\n` +
       `📦 *Package:* ${product.variant} Edition (Qty: ${currentQuantity})\n` +
       `💰 *Total Amount:* ₦${totalAmount.toLocaleString()}\n` +
       `👤 *Full Name:* ${fullName}\n` +
@@ -413,9 +507,12 @@ function initOrderForm() {
         <div style="width: 64px; height: 64px; background-color: #dcfce7; color: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
           <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         </div>
+        <div style="display: inline-block; background: #f1f5f9; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; color: #475569; margin-bottom: 0.75rem;">
+          Order Ref: #${orderId}
+        </div>
         <h3 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Order Received Successfully!</h3>
         <p style="color: #64748b; font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6; max-width: 520px; margin-left: auto; margin-right: auto;">
-          Thank you, <strong>${fullName}</strong>. Your order for the <strong>${product.variant} Car Jump Starter (Qty: ${currentQuantity})</strong> has been received. Our dispatch team will call or message you on <strong>${phone}</strong> shortly before delivery to <strong>${city}, ${state}</strong>.
+          Thank you, <strong>${fullName}</strong>. Your order for the <strong>${product.variant} Car Jump Starter (Qty: ${currentQuantity})</strong> has been logged. Our dispatch team will call or message you on <strong>${phone}</strong> shortly before delivery to <strong>${city}, ${state}</strong>.
         </p>
         <div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 360px; margin: 0 auto;">
           <a href="https://wa.me/2348000000000?text=${whatsappMessage}" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-full" style="background-color: #25D366; color: #ffffff;">

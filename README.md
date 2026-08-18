@@ -21,6 +21,32 @@ A high-performance, single-product e-commerce website designed for Nigerian cust
   - Formatted WhatsApp order dispatch hook.
   - Pre-wired integration comments for Paystack and Flutterwave.
 - **Meta Pixel Tracking**: Embedded Facebook Pixel tracking for `PageView`, `AddToCart`, `Lead`, and `Purchase` events.
+- **EmailJS Order Notification Integration**: Direct email dispatches on order placement to your inbox without needing a complex backend server.
+
+---
+
+## EmailJS Setup Guide
+
+To receive instant email notifications whenever a customer submits an order:
+
+1. Create a free account at [EmailJS](https://www.emailjs.com/).
+2. Add an **Email Service** (e.g. Gmail, Outlook, or SMTP) to get your `EMAILJS_SERVICE_ID`.
+3. Create an **Email Template** with these variables:
+   - `{{order_id}}` — Order reference number (e.g., #ORD-123456)
+   - `{{customer_name}}` — Customer's full name
+   - `{{customer_phone}}` — Phone number
+   - `{{customer_whatsapp}}` — WhatsApp contact
+   - `{{delivery_address}}` — Full address with City & State
+   - `{{package_edition}}` — Standard or Premium Edition
+   - `{{quantity}}` — Quantity ordered
+   - `{{unit_price}}` — Unit price
+   - `{{total_amount}}` — Total order cost
+   - `{{payment_method}}` — Payment on Delivery
+   - `{{order_date}}` — Date & time of order
+4. Copy your **Public Key** from EmailJS Account > API Keys.
+5. Provide your keys either via:
+   - Environment variables (`EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, `EMAILJS_PUBLIC_KEY`), or
+   - In `assets/js/main.js` (`EMAILJS_CONFIG` object or global `window.EMAILJS_*` variables).
 
 ---
 
