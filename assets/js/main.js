@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initOrderNowCTAs();
   initOrderForm();
   initMetaPixelTracking();
+  initStickyMobileBar();
 });
 
 /**
@@ -243,6 +244,22 @@ function initVariantSelectors() {
       updateOrderSummary();
     });
   }
+
+  // Support for package comparison buttons
+  const selectPackageBtns = document.querySelectorAll('[data-select-package]');
+  selectPackageBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const pkg = this.getAttribute('data-select-package');
+      if (pkg && PRODUCTS[pkg]) {
+        selectVariant(pkg);
+        const orderFormSection = document.getElementById('order-form');
+        if (orderFormSection) {
+          orderFormSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
 }
 
 function selectVariant(variantKey) {
@@ -289,6 +306,7 @@ function updateOrderSummary() {
   const summaryVariant = document.getElementById('summaryVariant');
   const summaryPrice = document.getElementById('summaryPrice');
   const summaryTotal = document.getElementById('summaryTotal');
+  const stickyBarPrice = document.getElementById('stickyBarPrice');
 
   const product = PRODUCTS[currentVariantKey] || PRODUCTS['standard'];
   const totalAmount = product.price * currentQuantity;
@@ -302,6 +320,39 @@ function updateOrderSummary() {
   if (summaryTotal) {
     summaryTotal.textContent = `₦${totalAmount.toLocaleString()}`;
   }
+  if (stickyBarPrice) {
+    stickyBarPrice.textContent = `₦${(product.price * currentQuantity).toLocaleString()}`;
+  }
+}
+
+/**
+ * Sticky Mobile Bar Controller
+ * Shows sticky CTA bar after scrolling past hero, hides inside checkout area
+ */
+function initStickyMobileBar() {
+  const stickyBar = document.getElementById('stickyMobileBar');
+  const heroSection = document.getElementById('hero');
+  const orderSection = document.getElementById('order-form');
+  if (!stickyBar) return;
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    const heroH = heroSection ? heroSection.offsetHeight : 300;
+    const orderRect = orderSection ? orderSection.getBoundingClientRect() : null;
+
+    const isPastHero = scrollY > heroH * 0.7;
+    const isInsideOrder = orderRect && orderRect.top <= (window.innerHeight - 50) && orderRect.bottom >= 50;
+
+    if (isPastHero && !isInsideOrder && window.innerWidth <= 640) {
+      stickyBar.style.display = 'flex';
+    } else {
+      stickyBar.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
 }
 
 /* ==========================================================================
