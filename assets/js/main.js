@@ -6,9 +6,9 @@
 
 // EmailJS Configuration Object
 const EMAILJS_CONFIG = {
-  serviceId: window.EMAILJS_SERVICE_ID || '',
-  templateId: window.EMAILJS_TEMPLATE_ID || '',
-  publicKey: window.EMAILJS_PUBLIC_KEY || ''
+  serviceId: window.EMAILJS_SERVICE_ID || 'service_gxhivxk',
+  templateId: window.EMAILJS_TEMPLATE_ID || 'template_239s5yz',
+  publicKey: window.EMAILJS_PUBLIC_KEY || '_h1UzYlyePtWt0IqM'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -486,42 +486,77 @@ function initOrderForm() {
 
     console.log('New Order Placed:', orderData);
 
-    // 1. Send Email Notification via EmailJS
+    // 1. Send Order to Server Backup Endpoint (Logs order & stores for retrieval)
+    try {
+      fetch('/api/submit-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderData)
+      }).then(r => r.json()).then(data => {
+        console.log('Server Backup: Order logged with response:', data);
+      }).catch(err => {
+        // Static host environment
+      });
+    } catch (e) {}
+
+    // 2. Send Email Notification via EmailJS
     if (typeof window.emailjs !== 'undefined' && EMAILJS_CONFIG.serviceId && EMAILJS_CONFIG.templateId && EMAILJS_CONFIG.publicKey) {
       try {
         const templateParams = {
+          // Standard Identifiers
           order_id: orderId,
+          orderId: orderId,
           to_name: 'Store Admin',
+          to_email: 'franklinlaptop10@gmail.com',
+          reply_to: 'franklinlaptop10@gmail.com',
+          
+          // Customer Details
           customer_name: fullName,
+          name: fullName,
           customer_phone: phone,
+          phone: phone,
           customer_whatsapp: whatsapp,
+          whatsapp: whatsapp,
+          
+          // Location & Address
           delivery_address: `${address}, ${city}, ${state} State`,
+          address: `${address}, ${city}, ${state} State`,
           customer_state: state,
+          state: state,
           customer_city: city,
+          city: city,
           customer_street: address,
+          
+          // Product Details
           package_edition: `${product.variant} Edition`,
+          package: `${product.variant} Edition`,
+          variant: product.variant,
+          product_name: product.name,
           quantity: currentQuantity,
+          qty: currentQuantity,
           unit_price: `₦${product.price.toLocaleString()}`,
           total_amount: `₦${totalAmount.toLocaleString()}`,
+          total: `₦${totalAmount.toLocaleString()}`,
           payment_method: 'Payment on Delivery',
-          order_date: dateFormatted
+          order_date: dateFormatted,
+          date: dateFormatted
         };
 
-        await window.emailjs.send(
+        const emailResponse = await window.emailjs.send(
           EMAILJS_CONFIG.serviceId,
           EMAILJS_CONFIG.templateId,
           templateParams,
           EMAILJS_CONFIG.publicKey
         );
-        console.log('EmailJS: Order notification email dispatched successfully.');
+        console.log('EmailJS: Order notification email dispatched successfully!', emailResponse);
       } catch (emailErr) {
-        console.warn('EmailJS dispatch notice:', emailErr);
+        console.error('EmailJS Error: Failed to send email. Details:', emailErr);
       }
     } else {
-      console.info('EmailJS: Configuration credentials pending in .env or window.EMAILJS_CONFIG.');
+      console.warn('EmailJS Notice: EmailJS credentials not set yet. To receive emails, configure EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, and EMAILJS_PUBLIC_KEY.');
     }
 
-    // 2. Track Meta Pixel Lead & Purchase
+    // 3. Track Meta Pixel Lead & Purchase
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', {
         content_name: `${product.variant} Car Jump Starter`,
