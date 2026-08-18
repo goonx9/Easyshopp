@@ -146,25 +146,26 @@ function initFaqAccordion() {
 
 /* ==========================================================================
    4. PRODUCT VARIANTS & CONFIGURATION
-   Standard: ₦59,900 | Premium: ₦69,900
+   Standard: ₦59,900 (Jump Starter Only) 
+   Premium: ₦69,900 (Jump Starter + Digital Tire Inflator Pump)
    ========================================================================== */
 const PRODUCTS = {
   'standard': {
     id: 'jump-starter-standard',
-    name: 'Car Jump Starter (Standard)',
-    variant: 'Standard',
+    name: 'Car Jump Starter (Jump Starter Only)',
+    variant: 'Standard (Jump Starter Only)',
     price: 59900,
     priceFormatted: '₦59,900',
-    originalPriceFormatted: '₦69,900',
+    originalPriceFormatted: '₦95,000',
     image: 'https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787000239/5771575669845332195_duiuzr.jpg'
   },
   'premium': {
-    id: 'jump-starter-premium',
-    name: 'Car Jump Starter (Premium)',
-    variant: 'Premium',
+    id: 'jump-starter-premium-tire-inflator',
+    name: '2-in-1 Combo (Jump Starter + Digital Tire Inflator)',
+    variant: 'Premium (Jump Starter + Tire Inflator)',
     price: 69900,
     priceFormatted: '₦69,900',
-    originalPriceFormatted: '₦85,000',
+    originalPriceFormatted: '₦115,000',
     image: 'https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787000239/5771575669845332193_u8om14.jpg'
   }
 };
