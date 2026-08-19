@@ -92,9 +92,8 @@
     @media(max-width:380px){.hero-title{font-size:1.55rem}.btn{font-size:.88rem;padding:.7rem 1rem}}
   </style>
 
-  <!-- Full stylesheet loaded async (non-blocking) — no more render-blocking CSS -->
-  <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+  <!-- Full stylesheet: sync load preserves CLS=0. Inline critical CSS above handles FCP. -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
