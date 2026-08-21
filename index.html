@@ -2453,7 +2453,7 @@ ul, ol {
 
   </style>
 </head>
-<body>
+<body style="background:#fff;margin:0;padding:0">
 
   <!-- Top Notification Bar -->
   <div class="top-banner">
@@ -2519,7 +2519,7 @@ ul, ol {
 
           <!-- Urgency Badge -->
           <div class="hero-urgency">
-            <span>⚡ Only 14 units left this batch at discount price &bull; Free delivery ends soon</span>
+            <span>⚡ Free Delivery Nationwide &nbsp;&bull;&nbsp; Pay Cash on Arrival &nbsp;&bull;&nbsp; No Upfront Payment</span>
           </div>
 
           <!-- Strong Benefit-Driven Headline -->
@@ -3233,7 +3233,8 @@ ul, ol {
     </section>
 
     <!-- 12. FINAL HIGH-CONVERSION ORDER SECTION -->
-    <section class="section section-alt" id="order-form">
+      <div style="background:#fefce8;border:1px solid #fde68a;border-left:4px solid #f59e0b;border-radius:8px;padding:0.9rem 1.25rem;margin:0 0 0;font-size:0.88rem;color:#92400e;font-weight:600;text-align:center;">&#x1F4CD; <strong>Outside Lagos?</strong> We deliver to all 36 states! <a href="https://wa.me/2348039940408?text=Hi%2C+I+am+outside+Lagos+and+I+would+like+to+order+the+Car+Jump+Starter." target="_blank" rel="noopener" style="color:#b45309;text-decoration:underline;font-weight:700;">WhatsApp us to confirm delivery &#x2192;</a></div>
+  <section class="section section-alt" id="order-form">
       <div class="container">
         <div class="section-header" style="margin-bottom: 2rem;">
           <span class="section-tag">Direct Warehouse Dispatch</span>
@@ -3390,10 +3391,12 @@ ul, ol {
               </div>
 
               <!-- Submit Button -->
+                            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.25rem;padding:0.75rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;margin-bottom:1rem;font-size:0.82rem;font-weight:700;color:#15803d;text-align:center;">&#x2705; Pay Cash on Delivery &nbsp;&nbsp; &#x1F4E6; Free Nationwide Delivery &nbsp;&nbsp; &#x1F504; 7-Day Replacement Guarantee</div>
               <button type="submit" class="btn btn-primary btn-full btn-order-submit pulse-btn" id="submitOrderBtn">
                 ORDER NOW &bull; PAY ON DELIVERY
               </button>
 
+              <div style="text-align:center;margin:0.85rem 0 0.25rem;"><a href="https://wa.me/2348039940408?text=Hi%2C+I+want+to+order+the+Car+Jump+Starter+but+I+have+a+question." target="_blank" rel="noopener" style="font-size:0.9rem;font-weight:700;color:#16a34a;text-decoration:none;">&#x1F4AC; Not sure? Chat us on WhatsApp before ordering &#x2192;</a></div>
               <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.85rem; margin-top: 1rem; font-size: 0.82rem; color: #475569; line-height: 1.5; text-align: center;">
                 🔒 <strong>Zero Risk Reassurance:</strong> Inspect your package upon delivery before making payment via cash or instant bank transfer. Our dispatch team will call you before delivery.
               </div>
@@ -3429,6 +3432,7 @@ ul, ol {
   <!-- Previously this was inline in <head>, causing ~200ms main thread block -->
   <script>
   window.addEventListener('load', function() {
+  setTimeout(function() {
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -3439,6 +3443,7 @@ ul, ol {
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '446510071587010');
     fbq('track', 'PageView');
+  }, 1000);
   });
   </script>
   <noscript><img height="1" width="1" style="display:none"
