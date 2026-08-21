@@ -2451,6 +2451,49 @@ ul, ol {
 }
 
 
+    /* ── PACKAGE SECTION MOBILE FIXES ── */
+    @media (max-width: 520px) {
+      /* Edition card top: stack badge above price on small screens */
+      .edition-card-top {
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        padding-right: 2.75rem;
+      }
+      .edition-badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.45rem;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+      }
+      .edition-price { font-size: 1.2rem; }
+      .edition-title { font-size: .95rem; }
+      .edition-desc  { font-size: .78rem; margin-bottom: .5rem; }
+      .edition-features { font-size: .75rem; }
+
+      /* Package comparison cards */
+      .package-ribbon {
+        font-size: 0.7rem;
+        letter-spacing: 0.04em;
+        white-space: normal;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0.45rem 0.75rem;
+      }
+      .package-name    { font-size: 1rem; }
+      .package-price   { font-size: 1.6rem; }
+      .package-subtitle { font-size: .82rem; }
+      .package-feature-item { font-size: .82rem; }
+
+      /* Edition selection block */
+      .edition-selection-block { padding: 1rem 0.75rem; }
+      .edition-card-label { padding: 0.85rem 0.75rem; }
+      .edition-step-badge { font-size: 0.7rem; }
+    }
+
+    /* Force single column packages below 480px */
+    @media (max-width: 480px) {
+      .edition-cards-grid { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body style="background:#fff;margin:0;padding:0">
@@ -3278,7 +3321,7 @@ ul, ol {
                 <input type="radio" id="formVariantPremium" name="formVariant" value="premium">
                 <div class="edition-card-content">
                   <div class="edition-card-top">
-                    <span class="edition-badge edition-badge-pro">RECOMMENDED / 2-IN-1 COMBO</span>
+                    <span class="edition-badge edition-badge-pro">&#x2B50; BEST VALUE</span>
                     <strong class="edition-price">₦69,900</strong>
                   </div>
                   <h4 class="edition-title">Premium Combo (With Tire Inflator)</h4>
@@ -3330,10 +3373,7 @@ ul, ol {
                   <label class="form-label" for="whatsapp">WhatsApp Number *</label>
                   <input class="form-input" type="tel" id="whatsapp" placeholder="e.g. 08039940408" autocomplete="tel">
                 </div>
-                <div class="form-group">
-                  <label class="form-label" for="altPhone">Alternative Phone Number (Optional)</label>
-                  <input class="form-input" type="tel" id="altPhone" placeholder="e.g. 09087654321" autocomplete="tel">
-                </div>
+
               </div>
 
               <!-- State & City -->
