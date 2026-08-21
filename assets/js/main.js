@@ -383,7 +383,10 @@ function initOrderNowCTAs() {
           const product = PRODUCTS[currentVariantKey] || PRODUCTS['standard'];
           window.fbq('track', 'InitiateCheckout', {
             content_name: product.name,
+            content_ids: [product.id],
+            content_type: 'product',
             content_category: 'Automotive Accessories',
+            num_items: currentQuantity,
             value: product.price * currentQuantity,
             currency: 'NGN'
           });
@@ -408,7 +411,9 @@ function initMetaPixelTracking() {
           viewContentFired = true;
           if (typeof window.fbq === 'function') {
             window.fbq('track', 'ViewContent', {
-              content_name: 'Car Jump Starter',
+              content_name: 'Car Jump Starter - AutoPower Nigeria',
+              content_ids: ['jump-starter-standard'],
+              content_type: 'product',
               content_category: 'Automotive Emergency Power',
               value: 59900,
               currency: 'NGN'
@@ -561,6 +566,19 @@ function initOrderForm() {
       console.warn('EmailJS Notice: EmailJS credentials not set yet. To receive emails, configure EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, and EMAILJS_PUBLIC_KEY.');
     }
 
+      // Advanced matching: pass user data before Purchase for better attribution
+      if (typeof window.fbq === 'function') {
+        window.fbq('init', '446510071587010', {
+          ph: phone.replace(/\D/g, ''),
+          fn: (fullName.split(' ')[0] || '').toLowerCase(),
+          ln: (fullName.split(' ').slice(1).join(' ') || '').toLowerCase(),
+          ct: city.toLowerCase().trim(),
+          st: state.toLowerCase().trim(),
+          country: 'ng'
+        });
+      }
+    }
+
     // 3. Track Meta Pixel Lead & Purchase
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', {
@@ -570,9 +588,11 @@ function initOrderForm() {
       });
       window.fbq('track', 'Purchase', {
         content_name: product.name,
+        content_ids: [product.id],
+        content_type: 'product',
+        num_items: currentQuantity,
         value: totalAmount,
-        currency: 'NGN',
-        content_type: 'product'
+        currency: 'NGN'
       });
     }
 
