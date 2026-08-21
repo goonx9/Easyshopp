@@ -444,7 +444,8 @@ function initOrderForm() {
     const fullName = document.getElementById('fullName')?.value.trim();
     const phone = document.getElementById('phone')?.value.trim();
     const whatsapp = document.getElementById('whatsapp')?.value.trim() || phone;
-    const altPhone = document.getElementById('altPhone')?.value.trim() || '';
+    // WhatsApp number doubles as the alternative contact — no separate altPhone field
+    const altPhone = whatsapp;
     const state = document.getElementById('state')?.value;
     const city = document.getElementById('city')?.value.trim();
     const address = document.getElementById('address')?.value.trim();
@@ -607,7 +608,6 @@ function initOrderForm() {
       `👤 *Full Name:* ${fullName}\n` +
       `📞 *Phone:* ${phone}\n` +
       `💬 *WhatsApp:* ${whatsapp}\n` +
-      (altPhone ? `📱 *Alt Phone:* ${altPhone}\n` : '') +
       `📍 *Delivery Address:* ${address}, ${city}, ${state} State\n` +
       `💳 *Payment Terms:* Pay on Delivery\n\n` +
       `Please confirm my delivery dispatch.`
