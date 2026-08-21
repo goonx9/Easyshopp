@@ -4,2453 +4,376 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Never Get Stranded Again – Jump Start Your Car in 60 Seconds | AutoPower Nigeria</title>
-  <meta name="description" content="Instant 60-second portable car jump starter. Start your car when your battery dies without jumper cables or asking strangers. Free delivery across Nigeria & Payment on Delivery.">
+  <title>AutoPower Nigeria – Automotive Emergency Power Devices | Free Delivery Nationwide</title>
+  <meta name="description" content="Shop Nigeria's most trusted automotive emergency power devices. Portable car jump starters, tire inflators & more. Free delivery to all 36 states. Pay on delivery.">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="product">
-  <meta property="og:title" content="Never Get Stranded Again – Jump Start Your Car in 60 Seconds">
-  <meta property="og:description" content="Instant portable jump starter for Nigerian drivers. Restart your vehicle in seconds. Free nationwide delivery & Pay on Delivery.">
-  <meta property="og:image" content="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787000239/5771575669845332195_duiuzr.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AutoPower Nigeria – Automotive Emergency Power Devices">
+  <meta property="og:description" content="Free nationwide delivery. Pay cash on delivery. Nigeria's go-to store for car emergency power devices.">
+  <meta property="og:image" content="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_750/v1787000239/5771575669845332195_duiuzr.jpg">
+  <meta property="og:url" content="https://www.easyshop.name.ng">
 
-  <!-- FIX 1: Preconnect for Cloudinary (images) and Facebook CDN -->
+  <!-- Preconnects -->
   <link rel="preconnect" href="https://res.cloudinary.com">
   <link rel="dns-prefetch" href="https://res.cloudinary.com">
-  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
 
-  <!-- FIX 2: Preload LCP hero image — tells browser to fetch it immediately, before parsing body -->
-  <link
-    rel="preload"
-    as="image"
-    href="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_750/v1787000239/5771575669845332195_duiuzr.jpg"
-    fetchpriority="high"
-  >
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- All CSS inlined: zero render-blocking, zero CLS, no extra HTTP request -->
   <style>
-/* ==========================================================================
-   EasyShop - Car Jump Starter Stylesheet (Pure CSS3)
-   Optimized for Speed, Mobile-First, GitHub Pages & Zero Layout Shift
-   ========================================================================== */
-
-:root {
-  /* Color Palette: Deep Navy, Cool Blue, Neutral Grays & Crisp Whites */
-  --color-primary: #0f172a;       /* Deep Navy / Slate 900 */
-  --color-primary-light: #1e293b; /* Slate 800 */
-  --color-accent: #2563eb;        /* Cool Blue / Blue 600 */
-  --color-accent-hover: #1d4ed8;  /* Darker Blue / Blue 700 */
-  --color-accent-soft: #eff6ff;   /* Light Blue Tint */
-  --color-accent-border: #bfdbfe; /* Blue 200 */
-  --color-bg: #ffffff;
-  --color-bg-alt: #f8fafc;        /* Slate 50 */
-  --color-bg-card: #ffffff;
-  --color-text: #0f172a;          /* Charcoal / Slate 900 */
-  --color-text-muted: #64748b;    /* Slate 500 */
-  --color-text-subtle: #94a3b8;   /* Slate 400 */
-  --color-border: #e2e8f0;        /* Slate 200 */
-  --color-border-light: #f1f5f9;  /* Slate 100 */
-  --color-success: #16a34a;       /* Green 600 */
-  --color-success-soft: #dcfce7;
-  --color-danger: #dc2626;
-
-  /* Typography Stack */
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-  /* Layout & Spacing */
-  --container-max: 1200px;
-  --header-height: 72px;
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-full: 9999px;
-
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.25s ease;
-}
-
-/* Reset & Box Sizing */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-/* Layout Utilities */
-.container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.section-alt {
-  background-color: var(--color-bg-alt);
-}
-
-.section-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 3.5rem auto;
-}
-
-.section-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-accent);
-  background-color: var(--color-accent-soft);
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  margin-bottom: 1rem;
-  border: 1px solid var(--color-accent-border);
-}
-
-.section-title {
-  font-size: 2.25rem;
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-  letter-spacing: -0.025em;
-}
-
-.section-desc {
-  font-size: 1.05rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
-/* Banner */
-.top-banner {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  padding: 0.6rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 0.02em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.top-banner span.badge {
-  background-color: var(--color-accent);
-  color: #ffffff;
-  font-size: 0.7rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-sm);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-/* Header & Navigation */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  letter-spacing: -0.03em;
-}
-
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  background-color: var(--color-accent);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-}
-
-.nav-desktop {
-  display: none;
-}
-
-@media (min-width: 860px) {
-  .nav-desktop {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-}
-
-.nav-link {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-}
-
-.nav-link:hover, .nav-link.active {
-  color: var(--color-accent);
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.cart-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg-alt);
-  color: var(--color-primary);
-  border: 1px solid var(--color-border);
-  transition: all var(--transition-fast);
-}
-
-.cart-button:hover {
-  background-color: var(--color-accent-soft);
-  border-color: var(--color-accent-border);
-  color: var(--color-accent);
-}
-
-.cart-count {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  background-color: var(--color-accent);
-  color: #ffffff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 4px;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  color: var(--color-primary);
-}
-
-@media (min-width: 860px) {
-  .btn-menu {
-    display: none;
-  }
-}
-
-/* Mobile Nav Drawer */
-.mobile-nav {
-  position: fixed;
-  top: var(--header-height);
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid var(--color-border);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  transform: translateY(-150%);
-  transition: transform var(--transition-normal);
-  z-index: 99;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.mobile-nav.open {
-  transform: translateY(0);
-}
-
-.mobile-nav .nav-link {
-  font-size: 1.05rem;
-  padding: 0.5rem 0;
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.6rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
-  text-align: center;
-  white-space: nowrap;
-}
-
-.btn-primary {
-  background-color: var(--color-accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
-.btn-dark {
-  background-color: var(--color-primary);
-  color: #ffffff;
-}
-
-.btn-dark:hover {
-  background-color: var(--color-primary-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-border);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-bg-alt);
-  border-color: var(--color-text-subtle);
-}
-
-.btn-sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-}
-
-.btn-lg {
-  padding: 1rem 2rem;
-  font-size: 1.05rem;
-  border-radius: var(--radius-lg);
-}
-
-.btn-full {
-  width: 100%;
-}
-
-/* Hero Section */
-.hero {
-  padding-top: 3.5rem;
-  padding-bottom: 4.5rem;
-  overflow: hidden;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-@media (min-width: 920px) {
-  .hero-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  background-color: var(--color-bg-alt);
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  margin-bottom: 1.25rem;
-  border: 1px solid var(--color-border);
-}
-
-.hero-pill span.dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-success);
-  border-radius: var(--radius-full);
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  color: var(--color-primary);
-  margin-bottom: 1.25rem;
-}
-
-@media (min-width: 640px) {
-  .hero-title {
-    font-size: 3.25rem;
-  }
-}
-
-.hero-subtitle {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: var(--color-text-muted);
-  margin-bottom: 2rem;
-}
-
-.hero-pricing-box {
-  background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
-  width: 100%;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.hero-price-label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.hero-price-val {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-}
-
-.hero-price-curr {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--color-accent);
-}
-
-.hero-price-orig {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-text-subtle);
-  text-decoration: line-through;
-}
-
-.hero-actions {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 0.85rem;
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 480px) {
-  .hero-actions {
-    flex-direction: row;
-  }
-}
-
-.hero-guarantee {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-border);
-  width: 100%;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-}
-
-.hero-guarantee-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 600;
-}
-
-/* Image Containers to Prevent CLS */
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07);
-}
-
-.image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-visual {
-  position: relative;
-}
-
-.aspect-product {
-  aspect-ratio: 4 / 3;
-}
-
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
-.badge-floating {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: var(--color-primary);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.4rem 0.8rem;
-  border-radius: var(--radius-full);
-  z-index: 2;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Benefits Grid */
-.benefits-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .benefits-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.benefit-card {
-  background-color: var(--color-bg-card);
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  transition: all var(--transition-normal);
-}
-
-.benefit-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-accent-border);
-  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08);
-}
-
-.benefit-icon {
-  width: 48px;
-  height: 48px;
-  background-color: var(--color-accent-soft);
-  color: var(--color-accent);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-}
-
-.benefit-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.6rem;
-}
-
-.benefit-desc {
-  font-size: 0.92rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
-/* How It Works Steps */
-.steps-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  counter-reset: step-counter;
-}
-
-@media (min-width: 768px) {
-  .steps-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.step-card {
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 2rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.step-number {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--color-accent);
-  background-color: var(--color-accent-soft);
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-}
-
-.step-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.6rem;
-}
-
-.step-desc {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
-/* Video Component (Click-to-Load Zero Preload) */
-.videos-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .videos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.video-box {
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-color: #000000;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.video-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-normal);
-}
-
-.video-container:hover img {
-  transform: scale(1.02);
-}
-
-.play-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(15, 23, 42, 0.4);
-  transition: background var(--transition-fast);
-}
-
-.video-container:hover .play-overlay {
-  background: rgba(15, 23, 42, 0.55);
-}
-
-.play-btn-circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background-color: var(--color-accent);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.5);
-  transition: transform var(--transition-fast);
-}
-
-.video-container:hover .play-btn-circle {
-  transform: scale(1.1);
-}
-
-.play-label {
-  color: #ffffff;
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-top: 0.75rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  letter-spacing: 0.02em;
-}
-
-.video-player {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: #000000;
-}
-
-.video-info {
-  padding: 1.5rem;
-}
-
-.video-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.35rem;
-}
-
-.video-desc {
-  font-size: 0.88rem;
-  color: var(--color-text-muted);
-}
-
-/* What's In The Box Section */
-.box-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
-}
-
-@media (min-width: 860px) {
-  .box-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
-  }
-}
-
-.box-images-duo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.box-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.box-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin: 1rem 0;
-}
-
-.box-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.box-item-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: var(--color-success-soft);
-  color: var(--color-success);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.box-notice {
-  font-size: 0.88rem;
-  color: var(--color-text-muted);
-  background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  padding: 0.85rem 1.15rem;
-  border-radius: var(--radius-md);
-}
-
-/* Product Spotlight & Variant Selector */
-.product-spotlight {
-  background-color: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-}
-
-@media (min-width: 860px) {
-  .product-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
-  }
-}
-
-.gallery-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.gallery-main {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg-alt);
-}
-
-.gallery-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.gallery-thumbs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-}
-
-.thumb-btn {
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  border: 2px solid var(--color-border);
-  background-color: var(--color-bg-alt);
-  padding: 0;
-  transition: border-color var(--transition-fast);
-}
-
-.thumb-btn.active, .thumb-btn:hover {
-  border-color: var(--color-accent);
-}
-
-.thumb-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Variant Selector Cards */
-.variant-selector {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.variant-card {
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  background-color: #ffffff;
-}
-
-.variant-card:hover {
-  border-color: var(--color-accent-border);
-  background-color: var(--color-bg-alt);
-}
-
-.variant-card.selected {
-  border-color: var(--color-accent);
-  background-color: var(--color-accent-soft);
-}
-
-.variant-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.variant-radio {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.variant-card.selected .variant-radio {
-  border-color: var(--color-accent);
-}
-
-.variant-radio::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--color-accent);
-  display: none;
-}
-
-.variant-card.selected .variant-radio::after {
-  display: block;
-}
-
-.variant-name {
-  font-weight: 700;
-  color: var(--color-primary);
-  font-size: 1.05rem;
-}
-
-.variant-tagline {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-}
-
-.variant-price {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--color-accent);
-}
-
-/* Quantity Selector */
-.quantity-box {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.quantity-control {
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-.qty-btn {
-  width: 40px;
-  height: 40px;
-  background-color: var(--color-bg-alt);
-  font-size: 1.1rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.qty-btn:hover {
-  background-color: var(--color-border);
-}
-
-.qty-val {
-  width: 45px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-}
-
-/* Reviews Grid */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .reviews-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.review-card {
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.stars {
-  color: #f59e0b;
-  display: flex;
-  gap: 0.2rem;
-  margin-bottom: 0.85rem;
-}
-
-.review-text {
-  font-size: 0.95rem;
-  color: var(--color-text);
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-}
-
-.review-author {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--color-border-light);
-}
-
-.author-name {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.author-loc {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-}
-
-.author-badge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--color-success);
-  background-color: var(--color-success-soft);
-  padding: 0.2rem 0.5rem;
-  border-radius: var(--radius-sm);
-}
-
-/* FAQ Accordion */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.faq-item {
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-.faq-question {
-  width: 100%;
-  padding: 1.25rem 1.5rem;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  transition: transform var(--transition-fast);
-}
-
-.faq-item.active .faq-icon {
-  transform: rotate(180deg);
-}
-
-.faq-answer {
-  padding: 0 1.5rem 1.25rem 1.5rem;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  display: none;
-}
-
-.faq-item.active .faq-answer {
-  display: block;
-}
-
-/* Checkout Form Section */
-.checkout-wrapper {
-  max-width: 720px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08);
-}
-
-@media (min-width: 640px) {
-  .checkout-wrapper {
-    padding: 3rem;
-  }
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-@media (min-width: 640px) {
-  .form-grid-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.form-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.form-input, .form-select, .form-textarea {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg-alt);
-  font-size: 0.95rem;
-  color: var(--color-text);
-  outline: none;
-  transition: border-color var(--transition-fast);
-}
-
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-  border-color: var(--color-accent);
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-.order-summary-box {
-  background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1.25rem;
-  margin: 1.5rem 0;
-}
-
-.summary-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.92rem;
-  padding: 0.4rem 0;
-  color: var(--color-text-muted);
-}
-
-.summary-row.total {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  border-top: 1px solid var(--color-border);
-  margin-top: 0.5rem;
-  padding-top: 0.75rem;
-}
-
-.checkout-notice {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  text-align: center;
-  margin-top: 1rem;
-}
-
-/* Vehicle Compatibility Grid */
-.vehicles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
-}
-
-@media (min-width: 640px) {
-  .vehicles-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .vehicles-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-.vehicle-card {
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1.5rem 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  transition: all var(--transition-fast);
-}
-
-.vehicle-card:hover {
-  border-color: var(--color-accent-border);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px -5px rgba(37, 99, 235, 0.08);
-}
-
-.vehicle-icon {
-  width: 52px;
-  height: 52px;
-  background-color: var(--color-accent-soft);
-  color: var(--color-accent);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vehicle-name {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.vehicle-note {
-  font-size: 0.88rem;
-  color: var(--color-text-muted);
-  text-align: center;
-  max-width: 640px;
-  margin: 2rem auto 0 auto;
-  line-height: 1.5;
-}
-
-/* Minimal Footer */
-.minimal-footer {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--color-text-subtle);
-  border-top: 1px solid var(--color-primary-light);
-}
-
-/* Form Variant Radio Options */
-.form-variant-group {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-  margin-top: 0.25rem;
-}
-
-@media (min-width: 480px) {
-  .form-variant-group {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.form-variant-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 0.9rem 1rem;
-  cursor: pointer;
-  background-color: var(--color-bg-alt);
-  transition: all var(--transition-fast);
-}
-
-.form-variant-label:hover {
-  border-color: var(--color-accent-border);
-}
-
-.form-variant-label input[type="radio"] {
-  accent-color: var(--color-accent);
-  width: 18px;
-  height: 18px;
-  margin-right: 0.6rem;
-}
-
-.form-variant-label.selected {
-  border-color: var(--color-accent);
-  background-color: var(--color-accent-soft);
-}
-
-/* ==========================================================================
-   EDITION SELECTION BLOCK (STEP 1 BEFORE FORM)
-   ========================================================================== */
-.edition-selection-block {
-  background: #ffffff;
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-.edition-block-header {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.25rem;
-}
-
-.edition-step-badge {
-  background: var(--color-primary);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  padding: 0.3rem 0.65rem;
-  border-radius: var(--radius-sm);
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-.edition-block-title {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  line-height: 1.2;
-}
-
-.edition-block-subtitle {
-  font-size: 0.88rem;
-  color: var(--color-text-muted);
-  margin-top: 0.2rem;
-}
-
-.edition-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .edition-cards-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.edition-card-label {
-  position: relative;
-  display: block;
-  cursor: pointer;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1.25rem;
-  background-color: var(--color-bg-alt);
-  transition: all var(--transition-fast);
-}
-
-.edition-card-label:hover {
-  border-color: var(--color-accent-border);
-  transform: translateY(-2px);
-}
-
-.edition-card-label input[type="radio"] {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  width: 20px;
-  height: 20px;
-  accent-color: var(--color-accent);
-  cursor: pointer;
-}
-
-.edition-card-label.selected {
-  border-color: var(--color-accent);
-  background-color: #f0f7ff;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
-}
-
-.edition-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.75rem;
-  margin-bottom: 0.6rem;
-  padding-right: 2rem; /* space for radio */
-}
-
-.edition-badge {
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: #16a34a;
-  background-color: #dcfce7;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-full);
-  letter-spacing: 0.03em;
-}
-
-.edition-badge-pro {
-  color: #7c3aed;
-  background-color: #f3e8ff;
-}
-
-.edition-price {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--color-accent);
-}
-
-.edition-title {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  margin-bottom: 0.35rem;
-}
-
-.edition-desc {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  line-height: 1.45;
-  margin-bottom: 0.85rem;
-}
-
-.edition-features {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  font-size: 0.8rem;
-  color: #334155;
-  font-weight: 600;
-  border-top: 1px dashed var(--color-border);
-  padding-top: 0.75rem;
-}
-
-.form-header-divider {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.85rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-/* Button Pulse effect for mobile attention */
-.pulse-btn {
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
-  animation: subtlePulse 2.5s infinite;
-}
-
-@keyframes subtlePulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-  }
-}
-
-/* ==========================================================================
-   MOBILE-FIRST CONTENT & BUTTON OPTIMIZATIONS
-   ========================================================================== */
-.btn-order-submit {
-  padding: 1.1rem 1.75rem;
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-@media (max-width: 860px) {
-  :root {
-    --header-height: 64px;
-  }
-
-  .header-actions {
-    gap: 0.6rem;
-  }
-
-  .header-actions .btn-sm {
-    padding: 0.45rem 0.8rem;
-    font-size: 0.78rem;
-    min-height: 36px;
-    letter-spacing: 0.02em;
-  }
-
-  .btn-menu {
-    width: 38px;
-    height: 38px;
-  }
-}
-
-@media (max-width: 640px) {
-  /* Prevent any horizontal page overflow */
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  /* Balanced container spacing for mobile navigation and reading */
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .section {
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
-  }
-
-  .section-header {
-    margin-bottom: 1.75rem;
-  }
-
-  /* Compact, clean typography on mobile screens */
-  .hero-title {
-    font-size: 1.75rem;
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-    word-break: break-word;
-  }
-
-  .hero-subtitle, .hero-desc {
-    font-size: 0.92rem;
-    line-height: 1.5;
-    margin-bottom: 1.25rem;
-  }
-
-  .section-title {
-    font-size: 1.45rem;
-    line-height: 1.25;
-  }
-
-  .section-desc {
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
-
-  .hero-pill {
-    font-size: 0.78rem;
-    padding: 0.35rem 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .hero-pricing-box {
-    padding: 0.75rem 1rem;
-    margin-bottom: 1.25rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .hero-price-curr {
-    font-size: 1.5rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 0.65rem;
-  }
-
-  .hero-guarantee {
-    flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
-    margin-top: 1rem;
-    font-size: 0.8rem;
-  }
-
-  /* Proportional Mobile Button Sizing (Sleek & comfortable) */
-  .btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.92rem;
-    min-height: 44px;
-    border-radius: var(--radius-md);
-  }
-
-  .btn-lg {
-    padding: 0.85rem 1.35rem;
-    font-size: 0.95rem;
-    min-height: 46px;
-    border-radius: var(--radius-md);
-  }
-
-  .btn-order-submit {
-    padding: 0.85rem 1.25rem;
-    font-size: 0.98rem;
-    min-height: 48px;
-    font-weight: 800;
-  }
-
-  .btn-mobile-cta {
-    padding: 0.8rem 1.25rem;
-    font-size: 0.92rem;
-    min-height: 44px;
-  }
-
-  /* Mobile Nav Drawer */
-  .mobile-nav {
-    padding: 1.25rem 1rem 1.5rem;
-    gap: 0.85rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .mobile-nav .nav-link {
-    font-size: 0.95rem;
-    font-weight: 700;
-    padding: 0.6rem 0.5rem;
-    border-bottom: 1px solid var(--color-border-light);
-    color: var(--color-primary);
-  }
-
-  /* Form & Input controls */
-  .form-input, .form-select, .form-textarea {
-    font-size: 16px; /* Prevents mobile browser auto-zooming */
-    padding: 0.75rem 0.85rem;
-    min-height: 46px;
-  }
-
-  .form-label {
-    font-size: 0.85rem;
-    margin-bottom: 0.35rem;
-  }
-
-  /* Checkout Form Container */
-  .checkout-wrapper {
-    padding: 1.25rem 0.85rem;
-    border-radius: var(--radius-md);
-  }
-
-  /* Edition Selection Block (Step 1) */
-  .edition-selection-block {
-    padding: 1rem 0.85rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .edition-block-title {
-    font-size: 1.05rem;
-  }
-
-  .edition-block-subtitle {
-    font-size: 0.82rem;
-  }
-
-  .edition-card-label {
-    padding: 0.9rem;
-  }
-
-  .edition-price {
-    font-size: 1.25rem;
-  }
-
-  .edition-title {
-    font-size: 1rem;
-  }
-
-  .edition-desc {
-    font-size: 0.8rem;
-    margin-bottom: 0.65rem;
-  }
-
-  .edition-features {
-    font-size: 0.78rem;
-    gap: 0.25rem;
-    padding-top: 0.6rem;
-  }
-
-  /* Product details & spotlight */
-  .product-spotlight {
-    padding: 1rem;
-    border-radius: var(--radius-md);
-  }
-
-  /* Vehicle compatibility grid */
-  .vehicles-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.65rem;
-  }
-
-  .vehicle-card {
-    padding: 0.85rem 0.5rem;
-  }
-
-  .vehicle-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 0.5rem;
-  }
-
-  .vehicle-name {
-    font-size: 0.82rem;
-  }
-
-  .vehicle-type {
-    font-size: 0.72rem;
-  }
-
-  /* Order Summary Box */
-  .order-summary-box {
-    padding: 0.85rem;
-    margin: 1rem 0;
-  }
-
-  .summary-row {
-    font-size: 0.82rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .summary-row.total {
-    font-size: 0.98rem;
-    padding-top: 0.6rem;
-  }
-
-  /* Benefits and step cards */
-  .benefits-grid, .steps-grid, .videos-grid, .box-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .benefit-card, .step-card {
-    padding: 1.25rem;
-  }
-}
-
-@media (max-width: 380px) {
-  .hero-title {
-    font-size: 1.55rem;
-  }
-
-  .section-title {
-    font-size: 1.35rem;
-  }
-
-  .btn {
-    font-size: 0.88rem;
-    padding: 0.7rem 1rem;
-  }
-
-  .btn-order-submit {
-    font-size: 0.92rem;
-  }
-}
-
-/* ==========================================================================
-   HIGH-CONVERTING SOCIAL PROOF, PACKAGES, TRUST & STICKY CTA STYLES
-   ========================================================================== */
-
-/* Hero Social Proof & Urgency Enhancements */
-.hero-rating {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.85rem;
-  flex-wrap: wrap;
-}
-
-.rating-stars {
-  color: #f59e0b;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-}
-
-.rating-text {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.hero-urgency {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  color: #b91c1c;
-  padding: 0.4rem 0.85rem;
-  border-radius: var(--radius-full);
-  font-size: 0.82rem;
-  font-weight: 700;
-  margin-bottom: 1.1rem;
-}
-
-/* Trust Badges Grid */
-.trust-badges-section {
-  background: #ffffff;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding: 2.25rem 0;
-}
-
-.trust-badges-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.trust-badge-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  padding: 1.15rem 1.25rem;
-  border-radius: var(--radius-md);
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
-}
-
-.trust-badge-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-accent);
-}
-
-.trust-badge-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: #eff6ff;
-  color: var(--color-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.trust-badge-title {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  margin-bottom: 0.2rem;
-}
-
-.trust-badge-desc {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  line-height: 1.4;
-}
-
-/* Stranded vs Saved Scenarios */
-.stranded-saved-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.scenario-card {
-  border-radius: var(--radius-md);
-  padding: 1.75rem;
-  border: 1px solid;
-}
-
-.scenario-card.stranded {
-  background: #fffdfd;
-  border-color: #fee2e2;
-}
-
-.scenario-card.saved {
-  background: #f0fdf4;
-  border-color: #bbf7d0;
-}
-
-.scenario-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.scenario-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1.1rem;
-}
-
-.scenario-card.stranded .scenario-icon {
-  background: #fee2e2;
-  color: #dc2626;
-}
-
-.scenario-card.saved .scenario-icon {
-  background: #dcfce7;
-  color: #16a34a;
-}
-
-.scenario-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--color-primary);
-}
-
-.scenario-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.scenario-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #334155;
-}
-
-/* WhatsApp Style Testimonial Card */
-.whatsapp-testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.whatsapp-card {
-  background: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-}
-
-.whatsapp-header {
-  background: #075e54;
-  color: #ffffff;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.whatsapp-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #128c7e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-.whatsapp-user-info {
-  flex: 1;
-}
-
-.whatsapp-name {
-  font-size: 0.92rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.whatsapp-location {
-  font-size: 0.75rem;
-  opacity: 0.85;
-}
-
-.whatsapp-body {
-  background: #efeae2;
-  background-image: radial-gradient(#d1d7db 1px, transparent 1px);
-  background-size: 16px 16px;
-  padding: 1.25rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.chat-bubble {
-  background: #ffffff;
-  padding: 0.85rem 1rem;
-  border-radius: 0 10px 10px 10px;
-  max-width: 92%;
-  position: relative;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: #111b21;
-}
-
-.chat-bubble.admin-reply {
-  background: #d9fdd3;
-  align-self: flex-end;
-  border-radius: 10px 0 10px 10px;
-}
-
-.chat-time {
-  font-size: 0.68rem;
-  color: #667781;
-  text-align: right;
-  margin-top: 0.35rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.25rem;
-}
-
-/* Customer Reviews Grid */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.review-card {
-  background: #ffffff;
-  border: 1px solid var(--color-border);
-  padding: 1.5rem;
-  border-radius: var(--radius-md);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-}
-
-.review-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.75rem;
-}
-
-.reviewer-name {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--color-primary);
-}
-
-.reviewer-city {
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
-}
-
-.review-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  background: #dcfce7;
-  color: #16a34a;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 0.2rem 0.5rem;
-  border-radius: var(--radius-full);
-}
-
-.review-quote {
-  font-size: 0.9rem;
-  color: #334155;
-  line-height: 1.55;
-}
-
-/* Package Comparison Grid */
-.packages-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.package-card {
-  background: #ffffff;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem 2rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.package-card.recommended {
-  border-color: var(--color-accent);
-  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.12);
-  transform: scale(1.02);
-}
-
-.package-ribbon {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-accent);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  padding: 0.35rem 1rem;
-  border-radius: var(--radius-full);
-  white-space: nowrap;
-}
-
-.package-name {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  margin-bottom: 0.35rem;
-}
-
-.package-subtitle {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  margin-bottom: 1.25rem;
-}
-
-.package-price-wrap {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.package-price {
-  font-size: 2.25rem;
-  font-weight: 900;
-  color: var(--color-primary);
-}
-
-.package-card.recommended .package-price {
-  color: var(--color-accent);
-}
-
-.package-old-price {
-  font-size: 1.15rem;
-  color: var(--color-text-subtle);
-  text-decoration: line-through;
-  font-weight: 600;
-}
-
-.package-features {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-  flex-grow: 1;
-}
-
-.package-feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  font-size: 0.9rem;
-  color: #334155;
-  line-height: 1.45;
-}
-
-.package-feature-item svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-  color: #16a34a;
-}
-
-/* Guarantee Section */
-.guarantee-box {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 3rem 2.5rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  align-items: center;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.guarantee-seal {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: rgba(37, 99, 235, 0.2);
-  border: 2px solid #60a5fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #93c5fd;
-  flex-shrink: 0;
-}
-
-.guarantee-title {
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-.guarantee-desc {
-  font-size: 0.95rem;
-  color: #cbd5e1;
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-}
-
-.guarantee-points {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  font-size: 0.88rem;
-  color: #93c5fd;
-  font-weight: 700;
-}
-
-/* Sticky Mobile Bottom Order Bar */
-.sticky-mobile-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #ffffff;
-  padding: 0.75rem 1rem;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
-  border-top: 1px solid var(--color-border);
-  z-index: 99;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
-
-.sticky-price-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.sticky-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  font-weight: 700;
-}
-
-.sticky-price {
-  font-size: 1.15rem;
-  font-weight: 900;
-  color: var(--color-accent);
-  line-height: 1.1;
-}
-
-.sticky-cta-btn {
-  flex: 1;
-  max-width: 220px;
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 800;
-  border-radius: var(--radius-md);
-  text-align: center;
-}
-
-/* Responsive adjustments for new sections */
-@media (max-width: 900px) {
-  .trust-badges-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .packages-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-  }
-
-  .package-card.recommended {
-    transform: none;
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .whatsapp-testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stranded-saved-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .guarantee-box {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 2rem 1.5rem;
-  }
-
-  .guarantee-seal {
-    margin: 0 auto;
-  }
-
-  .guarantee-points {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .trust-badges-grid {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
-  }
-
-  .sticky-mobile-bar {
-    display: flex;
-  }
-
-  body {
-    padding-bottom: 60px; /* Space for sticky bar */
-  }
-
-  .package-card {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .package-price {
-    font-size: 1.85rem;
-  }
-}
-
-/* Notification Toast */
-.toast {
-  position: fixed;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background-color: var(--color-primary);
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-full);
-  font-size: 0.88rem;
-  font-weight: 600;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  z-index: 300;
-  transition: transform var(--transition-normal);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.toast.show {
-  transform: translateX(-50%) translateY(0);
-}
-
-
+    /* =============================================
+       HOMEPAGE-ONLY STYLES
+       ============================================= */
+
+    /* Store Hero */
+    .store-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+      color: #ffffff;
+      padding: 5rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .store-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(37,99,235,.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .store-hero-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .store-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #93c5fd;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+    .store-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+      margin-bottom: 1.25rem;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .store-hero h1 span { color: #60a5fa; }
+    .store-hero p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    .store-hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .75rem 1.5rem;
+      font-size: .85rem;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+    .store-hero-badges span { display: flex; align-items: center; gap: .4rem; }
+    .store-hero-badges span b { color: #e2e8f0; }
+
+    /* Category / section label */
+    .catalog-section { padding: 4rem 0 5rem; }
+    .catalog-section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-bottom: 2.5rem;
+    }
+    .catalog-section-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -.02em;
+    }
+    .catalog-section-sub {
+      font-size: .88rem;
+      color: #64748b;
+    }
+
+    /* Product Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+
+    /* Product Card */
+    .product-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(15,23,42,.12);
+      border-color: #bfdbfe;
+    }
+    .product-card-img {
+      position: relative;
+      aspect-ratio: 4/3;
+      background: #f8fafc;
+      overflow: hidden;
+    }
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease;
+    }
+    .product-card:hover .product-card-img img { transform: scale(1.04); }
+    .product-card-badge {
+      position: absolute;
+      top: .75rem;
+      left: .75rem;
+      font-size: .7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: .3rem .7rem;
+      border-radius: 9999px;
+      z-index: 2;
+    }
+    .badge-bestseller { background: #2563eb; color: #fff; }
+    .badge-new       { background: #16a34a; color: #fff; }
+    .badge-soon      { background: #94a3b8; color: #fff; }
+    .badge-sale      { background: #dc2626; color: #fff; }
+
+    .product-card-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: .6rem;
+    }
+    .product-card-category {
+      font-size: .72rem;
+      font-weight: 700;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .product-card-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+    .product-card-desc {
+      font-size: .84rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .product-card-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: .6rem;
+      margin-top: .25rem;
+    }
+    .product-card-price {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #2563eb;
+    }
+    .product-card-orig {
+      font-size: .88rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+    .product-card-discount {
+      font-size: .72rem;
+      font-weight: 800;
+      color: #dc2626;
+      background: #fef2f2;
+      padding: .15rem .45rem;
+      border-radius: 4px;
+    }
+    .product-card-footer {
+      padding: 0 1.25rem 1.25rem;
+    }
+    .product-card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: .8rem 1.25rem;
+      background: #2563eb;
+      color: #fff;
+      font-size: .92rem;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .product-card-cta:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+    /* Coming Soon card */
+    .product-card.coming-soon .product-card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(248,250,252,.7);
+      backdrop-filter: blur(2px);
+    }
+    .coming-soon-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      gap: .5rem;
+    }
+    .coming-soon-label span {
+      font-size: .78rem;
+      font-weight: 800;
+      color: #475569;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .product-card.coming-soon .product-card-cta {
+      background: #e2e8f0;
+      color: #94a3b8;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Trust strip */
+    .trust-strip {
+      background: #0f172a;
+      padding: 2rem 0;
+      border-top: 1px solid #1e293b;
+    }
+    .trust-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .trust-strip-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .trust-strip-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      text-align: center;
+      color: #94a3b8;
+      font-size: .8rem;
+    }
+    .trust-strip-item strong {
+      color: #e2e8f0;
+      font-size: .85rem;
+      font-weight: 700;
+    }
+    .trust-strip-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* Homepage footer */
+    .home-footer {
+      background: #0f172a;
+      border-top: 1px solid #1e293b;
+      padding: 2.5rem 0 1.5rem;
+      color: #64748b;
+      font-size: .85rem;
+    }
+    .home-footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+    .home-footer-logo {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+    .home-footer-logo .logo-icon {
+      width: 28px;
+      height: 28px;
+      background: #2563eb;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .home-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem 1.25rem;
+    }
+    .home-footer-links a { color: #64748b; text-decoration: none; transition: color .15s; }
+    .home-footer-links a:hover { color: #93c5fd; }
+    .home-footer-copy { color: #475569; font-size: .78rem; }
+
+    /* WhatsApp float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: #25D366;
+      color: #fff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      z-index: 999;
+      transition: transform .2s ease;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+    @media (max-width: 640px) {
+      .store-hero { padding: 3.5rem 0 3rem; }
+      .catalog-section { padding: 2.5rem 0 3.5rem; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .product-card-body { padding: .9rem; gap: .45rem; }
+      .product-card-name { font-size: .92rem; }
+      .product-card-price { font-size: 1.15rem; }
+      .product-card-footer { padding: 0 .9rem .9rem; }
+      .product-card-cta { padding: .7rem 1rem; font-size: .84rem; }
+      .product-card-desc { display: none; }
+    }
   </style>
 </head>
 <body style="background:#fff;margin:0;padding:0">
@@ -2458,7 +381,7 @@ ul, ol {
   <!-- Top Notification Bar -->
   <div class="top-banner">
     <span class="badge">NIGERIA DISPATCH</span>
-    <span>⚡ Free Nationwide Delivery &bull; Payment on Delivery (Cash or Transfer)</span>
+    <span>&#x26A1; Free Nationwide Delivery &bull; Payment on Delivery (Cash or Transfer)</span>
   </div>
 
   <!-- Site Header -->
@@ -2471,983 +394,252 @@ ul, ol {
         <span>AutoPower</span>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Main Navigation">
-        <a href="#hero" class="nav-link">Home</a>
-        <a href="#benefits" class="nav-link">Benefits</a>
-        <a href="#proof" class="nav-link">Customer Reviews</a>
-        <a href="#packages" class="nav-link">Packages</a>
-        <a href="#how-it-works" class="nav-link">How It Works</a>
-        <a href="#videos" class="nav-link">Video Proof</a>
-        <a href="#faq" class="nav-link">FAQ</a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#trust" class="nav-link">Why Us</a>
+        <a href="https://wa.me/2348039940408?text=Hi%2C+I+want+to+place+an+order." target="_blank" rel="noopener" class="nav-link">Contact</a>
       </nav>
 
-      <!-- Direct Header CTA -->
       <div class="header-actions">
-        <a href="#order-form" class="btn btn-primary btn-sm">ORDER NOW &bull; PAY ON DELIVERY</a>
-        <button class="btn-menu" id="menuToggle" aria-label="Toggle Navigation">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <a href="https://wa.me/2348039940408?text=Hi%2C+I+want+to+place+an+order." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order on WhatsApp</a>
+        <button class="btn-menu" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
+
+    <!-- Mobile Nav Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#products" class="nav-link">Products</a>
+      <a href="#trust" class="nav-link">Why Choose Us</a>
+      <a href="https://wa.me/2348039940408?text=Hi%2C+I+want+to+place+an+order." target="_blank" rel="noopener" class="nav-link">Contact via WhatsApp</a>
+      <a href="https://wa.me/2348039940408?text=Hi%2C+I+want+to+place+an+order." target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-full" style="margin-top:.5rem;">Order on WhatsApp</a>
+    </nav>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#hero" class="nav-link">Overview</a>
-    <a href="#benefits" class="nav-link">Key Benefits</a>
-    <a href="#proof" class="nav-link">Driver Reviews</a>
-    <a href="#packages" class="nav-link">Package Pricing</a>
-    <a href="#how-it-works" class="nav-link">How It Works</a>
-    <a href="#videos" class="nav-link">Video Proof</a>
-    <a href="#faq" class="nav-link">FAQ</a>
-    <a href="#order-form" class="btn btn-primary btn-full btn-mobile-cta">ORDER NOW &bull; PAY ON DELIVERY</a>
-  </div>
+  <!-- ==========================================
+       STORE HERO
+       ========================================== -->
+  <section class="store-hero">
+    <div class="container store-hero-inner">
+      <div class="store-hero-tag">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#60a5fa" stroke="none"><circle cx="12" cy="12" r="4"/></svg>
+        Official Nigeria Store
+      </div>
+      <h1>Automotive Emergency<br><span>Power Devices</span></h1>
+      <p>Never get stranded again. Shop tested, heavy-duty emergency car accessories — delivered free to your door across all 36 states.</p>
+      <div class="store-hero-badges">
+        <span><b>&#x2705;</b> Pay Cash on Delivery</span>
+        <span><b>&#x1F4E6;</b> Free Nationwide Delivery</span>
+        <span><b>&#x1F504;</b> 7-Day Replacement</span>
+        <span><b>&#x1F4DE;</b> Call Before Delivery</span>
+      </div>
+    </div>
+  </section>
 
+  <!-- ==========================================
+       PRODUCT CATALOG
+       ========================================== -->
   <main>
-    <!-- 1. ABOVE THE FOLD (FIRST SCREEN) -->
-    <section class="hero" id="hero">
-      <div class="container hero-grid">
-        <!-- Hero Text -->
-        <div class="hero-content">
-          
-          <!-- Rating & Verified Nigerian Drivers -->
-          <div class="hero-rating">
-            <span class="rating-stars">★★★★★</span>
-            <span class="rating-text">4.9/5 Rating &bull; Over 3,200+ Verified Nigerian Drivers</span>
-          </div>
-
-          <!-- Urgency Badge -->
-          <div class="hero-urgency">
-            <span>⚡ Free Delivery Nationwide &nbsp;&bull;&nbsp; Pay Cash on Arrival &nbsp;&bull;&nbsp; No Upfront Payment</span>
-          </div>
-
-          <!-- Strong Benefit-Driven Headline -->
-          <h1 class="hero-title">
-            Never Get Stranded Again – Jump Start Your Car in 60 Seconds
-          </h1>
-
-          <!-- Subheadline focused on peace of mind -->
-          <p class="hero-subtitle">
-            The emergency roadside backup every Nigerian car owner needs. Restart your vehicle immediately when your battery dies without needing a second car, begging strangers for cables, or waiting hours for roadside mechanics in traffic.
-          </p>
-
-          <!-- Prominent Price Display with Crossed-out Old Price -->
-          <div class="hero-pricing-box">
-            <div>
-              <div class="hero-price-label">Special Promo Price</div>
-              <div class="hero-price-val">
-                <span class="hero-price-curr">From ₦59,900</span>
-                <span class="hero-price-orig">₦95,000</span>
-              </div>
-            </div>
-            <span style="font-size: 0.8rem; font-weight: 700; color: #16a34a; background: #dcfce7; padding: 0.35rem 0.75rem; border-radius: 9999px;">
-              Save Over ₦35,000 Today
-            </span>
-          </div>
-
-          <!-- Primary CTA Button -->
-          <div class="hero-actions">
-            <a href="#order-form" class="btn btn-primary btn-lg pulse-btn">
-              ORDER NOW – PAY ON DELIVERY
-            </a>
-            <a href="#videos" class="btn btn-outline btn-lg">
-              Watch Video Proof
-            </a>
-          </div>
-
-          <!-- Guarantee & Trust Badges -->
-          <div class="hero-guarantee">
-            <div class="hero-guarantee-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Pay on Delivery</span>
-            </div>
-            <div class="hero-guarantee-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Free Delivery in Nigeria</span>
-            </div>
-            <div class="hero-guarantee-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>7-Day Replacement Guarantee</span>
-            </div>
-            <div class="hero-guarantee-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              <span>Inspect Before Paying</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Product Image (Primary LCP Element - Zero Lazy Loading) -->
-        <div class="hero-visual">
-          <div class="image-wrapper aspect-product">
-            <span class="badge-floating">Heavy-Duty 12V Starter</span>
-            <!-- LCP image: optimised Cloudinary URL (q_70 saves ~25% bytes vs q_auto) -->
-            <img
-              src="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_750/v1787000239/5771575669845332195_duiuzr.jpg"
-              srcset="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_400/v1787000239/5771575669845332195_duiuzr.jpg 400w, https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_600/v1787000239/5771575669845332195_duiuzr.jpg 600w, https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_750/v1787000239/5771575669845332195_duiuzr.jpg 750w"
-              sizes="(max-width: 920px) 100vw, 50vw"
-              width="750"
-              height="563"
-              fetchpriority="high"
-              decoding="sync"
-              loading="eager"
-              alt="Heavy Duty Portable Car Jump Starter"
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. TRUST BADGES STRIP -->
-    <section class="trust-badges-section">
+    <section class="catalog-section" id="products">
       <div class="container">
-        <div class="trust-badges-grid">
-          <div class="trust-badge-card">
-            <div class="trust-badge-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M15 8h4l3 5v3h-2"/></svg>
-            </div>
-            <div>
-              <div class="trust-badge-title">Free Nationwide Delivery</div>
-              <div class="trust-badge-desc">Lagos & Abuja in 24–48h; Other states in 2–3 days</div>
-            </div>
-          </div>
 
-          <div class="trust-badge-card">
-            <div class="trust-badge-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-            </div>
-            <div>
-              <div class="trust-badge-title">Payment on Delivery</div>
-              <div class="trust-badge-desc">Pay with cash or instant bank transfer after inspection</div>
-            </div>
-          </div>
-
-          <div class="trust-badge-card">
-            <div class="trust-badge-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="m8 11 2 2 4-4"/></svg>
-            </div>
-            <div>
-              <div class="trust-badge-title">Inspect Before You Pay</div>
-              <div class="trust-badge-desc">Open the box and confirm contents with dispatch rider</div>
-            </div>
-          </div>
-
-          <div class="trust-badge-card">
-            <div class="trust-badge-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <div>
-              <div class="trust-badge-title">7-Day Replacement</div>
-              <div class="trust-badge-desc">100% money-back or free swap if any factory fault occurs</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. STRANDED VS SAVED: THE NIGERIAN ROAD REALITY -->
-    <section class="section" id="why-you-need-it">
-      <div class="container" style="max-width: 960px;">
-        <div class="section-header">
-          <span class="section-tag">Peace of Mind</span>
-          <h2 class="section-title">The Real Difference When Your Battery Dies</h2>
-          <p class="section-desc">Car batteries fail without warning in Nigerian traffic, during rainy evenings, or on remote highways. See the difference this device makes:</p>
+        <div class="catalog-section-header">
+          <h2 class="catalog-section-title">Our Products</h2>
+          <span class="catalog-section-sub">Tap any product to see full details &amp; order</span>
         </div>
 
-        <div class="stranded-saved-grid">
-          <!-- Stranded Card -->
-          <div class="scenario-card stranded">
-            <div class="scenario-header">
-              <div class="scenario-icon">✕</div>
-              <h3 class="scenario-title">Without AutoPower (Stranded)</h3>
-            </div>
-            <div class="scenario-list">
-              <div class="scenario-item">
-                <span style="color: #dc2626; font-weight: bold;">✕</span>
-                <span><strong>Stuck in dangerous spots:</strong> Stranded at night on Third Mainland Bridge, lonely expressways, or busy Lagos/Abuja traffic.</span>
-              </div>
-              <div class="scenario-item">
-                <span style="color: #dc2626; font-weight: bold;">✕</span>
-                <span><strong>Begging reluctant strangers:</strong> Flagging down uninterested cars and hoping someone has long jumper cables and patience.</span>
-              </div>
-              <div class="scenario-item">
-                <span style="color: #dc2626; font-weight: bold;">✕</span>
-                <span><strong>Expensive mechanic & towing bills:</strong> Paying ₦15,000 to ₦35,000 for emergency roadside mechanics or tow trucks.</span>
-              </div>
-              <div class="scenario-item">
-                <span style="color: #dc2626; font-weight: bold;">✕</span>
-                <span><strong>Missed flights & meetings:</strong> Losing critical appointments or arriving late because your car won't start in the morning.</span>
-              </div>
-            </div>
-          </div>
+        <div class="products-grid">
 
-          <!-- Saved Card -->
-          <div class="scenario-card saved">
-            <div class="scenario-header">
-              <div class="scenario-icon">✓</div>
-              <h3 class="scenario-title">With AutoPower (Saved in 60s)</h3>
-            </div>
-            <div class="scenario-list">
-              <div class="scenario-item">
-                <span style="color: #16a34a; font-weight: bold;">✓</span>
-                <span><strong>Instant 60-second recovery:</strong> Pop your car hood, connect the clamps, turn the key, and drive off immediately.</span>
-              </div>
-              <div class="scenario-item">
-                <span style="color: #16a34a; font-weight: bold;">✓</span>
-                <span><strong>100% self-sufficient:</strong> No helper car needed, no asking strangers, no waiting in vulnerable locations.</span>
-              </div>
-              <div class="scenario-item">
-                <span style="color: #16a34a; font-weight: bold;">✓</span>
-                <span><strong>Zero additional expense:</strong> One-time purchase that lasts years and saves you countless roadside headaches.</span>
-              </div>
-              <div class="scenario-item">
-                <span style="color: #16a34a; font-weight: bold;">✓</span>
-                <span><strong>Emergency power bank:</strong> Keep your iPhones, Android phones, and dashcams fast-charged wherever you travel.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center;">
-          <a href="#order-form" class="btn btn-primary btn-lg">
-            PROTECT YOURSELF TODAY &bull; ORDER NOW
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. PUNCHY KEY BENEFITS & FEATURES -->
-    <section class="section section-alt" id="benefits">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Key Features</span>
-          <h2 class="section-title">Engineered for Tough Nigerian Road Realities</h2>
-          <p class="section-desc">Packed with heavy-duty safety features to make jump starting foolproof, 100% safe, and effortless.</p>
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <h3 class="benefit-title">Instant 60-Second Jump Start</h3>
-            <p class="benefit-desc">Delivers heavy-duty peak cranking current to start 12V sedans, SUVs, pickups, and vans on the very first crank.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3 class="benefit-title">Spark-Proof Smart Clamps</h3>
-            <p class="benefit-desc">100% reverse-polarity protection. If you attach positive and negative backwards, it beeps safely with zero sparks or battery damage.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
-            </div>
-            <h3 class="benefit-title">Ultra-Bright Emergency LED</h3>
-            <p class="benefit-desc">Built-in multi-mode LED with normal flashlight, strobe alert, and SOS distress beacon for changing tires or inspecting engines at night.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h10"/></svg>
-            </div>
-            <h3 class="benefit-title">Heavy-Duty Phone Power Bank</h3>
-            <p class="benefit-desc">High-speed USB output charges your smartphones, tablets, cameras, and GPS units during long interstate journeys and power outages.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="6" rx="2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/><path d="M14 6v5h7"/></svg>
-            </div>
-            <h3 class="benefit-title">Zero Second Car Needed</h3>
-            <p class="benefit-desc">Completely standalone device. You never need another vehicle or long tangled cables to get moving again.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            </div>
-            <h3 class="benefit-title">Compact Glovebox Fit</h3>
-            <p class="benefit-desc">Sleek, lightweight, and rugged. Stows away neatly in your glove compartment, door pocket, or trunk storage tray.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. SOCIAL PROOF & WHATSAPP TESTIMONIALS -->
-    <section class="section" id="proof">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Real Nigerian Drivers</span>
-          <h2 class="section-title">Tested & Trusted Across Nigerian Cities</h2>
-          <p class="section-desc">Over 3,200+ car owners, fleet managers, and Uber/Bolt drivers across Lagos, Abuja, Port Harcourt, and Ibadan rely on AutoPower.</p>
-        </div>
-
-        <!-- WhatsApp Chat Proofs -->
-        <div class="whatsapp-testimonials-grid">
-          <!-- WhatsApp Chat 1 -->
-          <div class="whatsapp-card">
-            <div class="whatsapp-header">
-              <div class="whatsapp-avatar">B</div>
-              <div class="whatsapp-user-info">
-                <div class="whatsapp-name">Babatunde Adeleke</div>
-                <div class="whatsapp-location">Lekki Phase 1, Lagos &bull; Verified Customer</div>
-              </div>
-            </div>
-            <div class="whatsapp-body">
-              <div class="chat-bubble">
-                Good evening AutoPower team. Just wanted to say a big thank you! That jump starter saved me on the Lekki-Epe expressway last night around 10:45 PM. My Camry battery just died at the toll gate area. Connected it and the car started immediately on first turn! 🙏🏾
-                <div class="chat-time">10:52 PM <span>✓✓</span></div>
-              </div>
-              <div class="chat-bubble admin-reply">
-                Glad it rescued you smoothly Babatunde! Always keep it charged in your glovebox. Drive safely! 🚗⚡
-                <div class="chat-time">10:55 PM <span>✓✓</span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- WhatsApp Chat 2 -->
-          <div class="whatsapp-card">
-            <div class="whatsapp-header">
-              <div class="whatsapp-avatar">E</div>
-              <div class="whatsapp-user-info">
-                <div class="whatsapp-name">Engr. Emeka Nwosu</div>
-                <div class="whatsapp-location">Gwarinpa, Abuja &bull; Verified Customer</div>
-              </div>
-            </div>
-            <div class="whatsapp-body">
-              <div class="chat-bubble">
-                Received my Premium edition today in Abuja. Dispatcher waited for me to inspect the package. I immediately tested it on my Prado V6 that has been parked for 4 days with a flat battery. Engine fired up effortlessly! Money well spent. 💯
-                <div class="chat-time">3:18 PM <span>✓✓</span></div>
-              </div>
-              <div class="chat-bubble admin-reply">
-                Thank you for the wonderful feedback Engr. Emeka! The Premium edition has extra cranking power specifically for V6 & V8 engines.
-                <div class="chat-time">3:22 PM <span>✓✓</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Customer Review Cards -->
-        <div class="reviews-grid">
-          <!-- Review 1 -->
-          <div class="review-card">
-            <div class="review-header">
-              <div>
-                <div class="reviewer-name">Cynthia Agbaje</div>
-                <div class="reviewer-city">Port Harcourt, Rivers State</div>
-              </div>
-              <span class="review-badge">Verified Buyer</span>
-            </div>
-            <div class="stars" style="margin-bottom: 0.5rem;">★★★★★</div>
-            <p class="review-quote">
-              "As a woman driving alone in Port Harcourt, being stranded with a dead battery was always my biggest nightmare. This device gives me 100% confidence. It's so lightweight and easy to use with the smart clamps."
-            </p>
-          </div>
-
-          <!-- Review 2 -->
-          <div class="review-card">
-            <div class="review-header">
-              <div>
-                <div class="reviewer-name">Alhaji Sani Bello</div>
-                <div class="reviewer-city">Kano State & Interstate Commuter</div>
-              </div>
-              <span class="review-badge">Verified Buyer</span>
-            </div>
-            <div class="stars" style="margin-bottom: 0.5rem;">★★★★★</div>
-            <p class="review-quote">
-              "I frequently drive between Abuja and Kano. I bought 2 units—one for my Honda and one for my son's Corolla. Delivery to Kano was fast and payment on delivery made me trust the transaction. Highly recommended."
-            </p>
-          </div>
-
-          <!-- Review 3 -->
-          <div class="review-card">
-            <div class="review-header">
-              <div>
-                <div class="reviewer-name">Capt. Femi Oladipo</div>
-                <div class="reviewer-city">Ikeja, Lagos State</div>
-              </div>
-              <span class="review-badge">Verified Buyer</span>
-            </div>
-            <div class="stars" style="margin-bottom: 0.5rem;">★★★★★</div>
-            <p class="review-quote">
-              "The dispatcher let me open the box and verify all accessories before I paid with bank transfer. Jump-started my Highlander effortlessly. Essential gear for every serious motorist in Nigeria."
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. HOW IT WORKS (3 SIMPLE SCAN-FRIENDLY STEPS) -->
-    <section class="section section-alt" id="how-it-works">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Quick & Easy</span>
-          <h2 class="section-title">How It Works in 3 Simple Steps</h2>
-          <p class="section-desc">You don't need any mechanical skills. Anyone can safely jump start their car in under 60 seconds.</p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">01</div>
-            <h3 class="step-title">Plug In The Clamps</h3>
-            <p class="step-desc">Insert the blue connector of the smart jumper cables firmly into the jump starter unit.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">02</div>
-            <h3 class="step-title">Attach Battery Terminals</h3>
-            <p class="step-desc">Connect the <strong>RED (+)</strong> clamp to the positive post and the <strong>BLACK (-)</strong> clamp to the negative terminal.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">03</div>
-            <h3 class="step-title">Start & Drive Off</h3>
-            <p class="step-desc">Turn your vehicle's ignition key. Your engine revives immediately! Remove the clamps and drive on with complete peace of mind.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. REAL DEMONSTRATION VIDEOS (CLICK-TO-LOAD ZERO PRELOAD) -->
-    <section class="section" id="videos">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Video Proof</span>
-          <h2 class="section-title">Watch Live Performance Demonstration</h2>
-          <p class="section-desc">Click either video below to see real unboxing footage and actual live engine starting power.</p>
-        </div>
-
-        <div class="videos-grid">
-          <!-- Video 1: Packaging Presentation -->
-          <div class="video-box">
-            <div class="video-container" data-video-src="https://res.cloudinary.com/dmy2yiax9/video/upload/v1787001219/202608172210_1_qpsb6p.mp4">
-              <img 
-                src="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787001662/Screenshot_2026-08-17_221759_kdxx3j.png"
-                srcset="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_400/v1787001662/Screenshot_2026-08-17_221759_kdxx3j.png 400w, https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_700/v1787001662/Screenshot_2026-08-17_221759_kdxx3j.png 700w"
-                sizes="(max-width: 768px) 100vw, 50vw" 
-                alt="Product Packaging Video Preview" 
-                loading="lazy" 
-                width="800" 
-                height="450"
-              >
-              <div class="play-overlay">
-                <div class="play-btn-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-                </div>
-                <span class="play-label">Click to Watch Packaging & Accessories</span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3 class="video-title">Packaging & Hard Case Demonstration</h3>
-              <p class="video-desc">See the full unboxing and hardware elements included in the protective storage case.</p>
-            </div>
-          </div>
-
-          <!-- Video 2: Live Engine Jump Start -->
-          <div class="video-box">
-            <div class="video-container" data-video-src="https://res.cloudinary.com/dmy2yiax9/video/upload/v1787001370/202608172210_2_1_f2rkli.mp4">
-              <img 
-                src="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787001663/Screenshot_2026-08-17_221948_chaobl.png"
-                srcset="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_400/v1787001663/Screenshot_2026-08-17_221948_chaobl.png 400w, https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_700/v1787001663/Screenshot_2026-08-17_221948_chaobl.png 700w"
-                sizes="(max-width: 768px) 100vw, 50vw" 
-                alt="Live Vehicle Jump Starting Preview" 
-                loading="lazy" 
-                width="800" 
-                height="450"
-              >
-              <div class="play-overlay">
-                <div class="play-btn-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-                </div>
-                <span class="play-label">Click to Watch Live Car Jump Start</span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3 class="video-title">Live Car Jump Start Demonstration</h3>
-              <p class="video-desc">Watch the jump starter revive a dead car battery effortlessly on the very first crank.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. PACKAGES & PRICING SECTION -->
-    <section class="section section-alt" id="packages">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Choose Your Package</span>
-          <h2 class="section-title">Select Your Preferred Edition</h2>
-          <p class="section-desc">Both packages come with 100% Free Nationwide Delivery & Payment on Delivery.</p>
-        </div>
-
-        <div class="packages-grid">
-          <!-- Standard Edition -->
-          <div class="package-card">
-            <h3 class="package-name">Standard Edition (Jump Starter Only)</h3>
-            <p class="package-subtitle">Complete 12V portable emergency car jump starter for dead battery rescue.</p>
-            
-            <div class="package-price-wrap">
-              <div class="package-price">₦59,900</div>
-              <div class="package-old-price">₦95,000</div>
-            </div>
-
-            <div class="package-features">
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>High-Power 12V Jump Starter:</strong> Starts cars, sedans, SUVs & trucks instantly</span>
-              </div>
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Smart Safety Jumper Clamps:</strong> Spark-proof & reverse-polarity protection</span>
-              </div>
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Multi-Mode LED Emergency Light:</strong> Torch, strobe, and emergency SOS</span>
-              </div>
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Fast-Charging USB Power Bank:</strong> Recharges phones, tablets & GPS on the road</span>
-              </div>
-              <div class="package-feature-item" style="color: #64748b;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                <span style="text-decoration: line-through; color: #94a3b8;">Tire Inflator Pump NOT Included</span>
-              </div>
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Free Delivery & Pay on Delivery</strong> across Nigeria</span>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-outline btn-full" data-select-package="standard">
-              Select Standard (No Inflator) &bull; ₦59,900
-            </button>
-          </div>
-
-          <!-- Premium Edition (Recommended) -->
-          <div class="package-card recommended">
-            <div class="package-ribbon">🔥 BEST VALUE &bull; 2-IN-1 EMERGENCY COMBO</div>
-            
-            <h3 class="package-name">Premium 2-in-1 Combo (Jump Starter + Tire Inflator)</h3>
-            <p class="package-subtitle">Complete roadside protection against BOTH dead batteries and flat tires.</p>
-            
-            <div class="package-price-wrap">
-              <div class="package-price">₦69,900</div>
-              <div class="package-old-price">₦115,000</div>
-            </div>
-
-            <div class="package-features">
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>High-Power 12V Jump Starter:</strong> Starts cars, sedans, SUVs & trucks instantly</span>
-              </div>
-              <div class="package-feature-item" style="background: #eff6ff; padding: 0.35rem 0.5rem; border-radius: 6px; border: 1px solid #bfdbfe;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span style="color: #1e40af; font-weight: 700;">INCLUDES Digital Electric Tire Inflator Pump (Pump flat car tires in minutes)</span>
-              </div>
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Smart Safety Jumper Clamps:</strong> Spark-proof & reverse-polarity protection</span>
-              </div>
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Multi-Mode LED Emergency Light:</strong> Torch, strobe, and emergency SOS</span>
-              </div>
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Fast-Charging USB Power Bank & Storage Case</strong></span>
-              </div>
-              <div class="package-feature-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Free Delivery & Pay on Delivery</strong> across Nigeria</span>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-primary btn-full pulse-btn" data-select-package="premium">
-              Select 2-in-1 Combo with Tire Inflator &bull; ₦69,900
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. GUARANTEE & RISK REVERSAL -->
-    <section class="section" style="padding-top: 2rem;">
-      <div class="container">
-        <div class="guarantee-box">
-          <div class="guarantee-seal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <div>
-            <h3 class="guarantee-title">Our 100% Risk-Free 7-Day Guarantee</h3>
-            <p class="guarantee-desc">
-              We stand behind the quality and reliability of AutoPower jump starters. If your device experiences any factory defect within 7 days of delivery, we will replace it immediately free of charge. You also have the right to inspect your package upon delivery before paying.
-            </p>
-            <div class="guarantee-points">
-              <span>✓ Inspect Before You Pay</span>
-              <span>✓ 7-Day Hassle-Free Replacement</span>
-              <span>✓ Dedicated Nigerian Support</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 10. WHAT'S IN THE BOX -->
-    <section class="section section-alt" id="whats-in-the-box">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Included Contents</span>
-          <h2 class="section-title">What's Inside Your Package</h2>
-          <p class="section-desc">Every order comes fully equipped with all essential emergency accessories ready for immediate use.</p>
-        </div>
-
-        <div class="box-grid">
-          <div class="box-images-duo">
-            <div class="image-wrapper aspect-square">
-              <img 
-                src="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787000239/5771575669845332194_c5l9zt.jpg"
-                srcset="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_300/v1787000239/5771575669845332194_c5l9zt.jpg 300w, https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_500/v1787000239/5771575669845332194_c5l9zt.jpg 500w"
-                sizes="(max-width: 860px) 50vw, 25vw" 
-                alt="AutoPower Packaging Hard Case" 
-                loading="lazy" 
-                width="600" 
-                height="600"
+          <!-- ============================================================
+               PRODUCT CARD — Jump Starter
+               To add a new product, copy from here to the matching comment
+               ============================================================ -->
+          <article class="product-card">
+            <div class="product-card-img">
+              <span class="product-card-badge badge-bestseller">&#x2B50; Best Seller</span>
+              <img
+                src="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_600/v1787000239/5771575669845332195_duiuzr.jpg"
+                srcset="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_400/v1787000239/5771575669845332195_duiuzr.jpg 400w,
+                        https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_70,w_600/v1787000239/5771575669845332195_duiuzr.jpg 600w"
+                sizes="(max-width: 640px) 50vw, 300px"
+                width="600" height="450"
+                loading="lazy"
+                alt="Heavy Duty Portable Car Jump Starter 12V"
               >
             </div>
-            <div class="image-wrapper aspect-square">
-              <img 
-                src="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_800/v1787000239/5771575669845332193_u8om14.jpg"
-                srcset="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_300/v1787000239/5771575669845332193_u8om14.jpg 300w, https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_auto,w_500/v1787000239/5771575669845332193_u8om14.jpg 500w"
-                sizes="(max-width: 860px) 50vw, 25vw" 
-                alt="Included Accessories" 
-                loading="lazy" 
-                width="600" 
-                height="600"
+            <div class="product-card-body">
+              <p class="product-card-category">Car Emergency Power</p>
+              <h3 class="product-card-name">Heavy-Duty Portable Car Jump Starter</h3>
+              <p class="product-card-desc">Start any dead 12V car battery in under 60 seconds. No cables, no strangers needed. Works on cars, SUVs &amp; vans.</p>
+              <div class="product-card-pricing">
+                <span class="product-card-price">&#x20A6;59,900</span>
+                <span class="product-card-orig">&#x20A6;95,000</span>
+                <span class="product-card-discount">-37%</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <a href="jump-starter.html" class="product-card-cta">View Product &amp; Order &#x2192;</a>
+            </div>
+          </article>
+          <!-- ============================================================
+               END OF PRODUCT CARD — copy block above for new products
+               ============================================================ -->
+
+
+          <!-- ============================================================
+               COMING SOON CARD 2 — Replace with your next product
+               ============================================================ -->
+          <article class="product-card coming-soon">
+            <div class="product-card-img">
+              <span class="product-card-badge badge-soon">Coming Soon</span>
+              <img
+                src="https://res.cloudinary.com/dmy2yiax9/image/upload/f_auto,q_40,w_400/v1787000239/5771575669845332193_u8om14.jpg"
+                width="400" height="300"
+                loading="lazy"
+                alt="Coming soon product"
+                style="filter:blur(4px);transform:scale(1.05)"
               >
+              <div class="coming-soon-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span>New product dropping soon</span>
+              </div>
             </div>
-          </div>
-
-          <div class="box-info">
-            <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a;">Complete Emergency Jump Starting Kit</h3>
-            
-            <ul class="box-list">
-              <li class="box-item">
-                <div class="box-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </div>
-                <span>1x Portable Jump Starter Power Unit</span>
-              </li>
-              <li class="box-item">
-                <div class="box-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </div>
-                <span>1x Smart Heavy-Duty Spark-Proof Clamps (Red + / Black -)</span>
-              </li>
-              <li class="box-item">
-                <div class="box-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </div>
-                <span>1x Multi-Tip USB Fast Charging Cable</span>
-              </li>
-              <li class="box-item">
-                <div class="box-item-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </div>
-                <span>1x Protective Storage Case & Instruction Manual</span>
-              </li>
-            </ul>
-
-            <div class="box-notice">
-              <strong>100% Quality Inspected:</strong> Every single unit is tested in our warehouse before dispatch to ensure ready-to-use starting power.
+            <div class="product-card-body">
+              <p class="product-card-category">Automotive</p>
+              <h3 class="product-card-name">New Product Coming Soon</h3>
+              <p class="product-card-desc">We're adding more high-quality automotive accessories to our store. Stay tuned!</p>
+              <div class="product-card-pricing">
+                <span class="product-card-price" style="color:#94a3b8;">TBA</span>
+              </div>
             </div>
-          </div>
-        </div>
+            <div class="product-card-footer">
+              <a href="https://wa.me/2348039940408?text=Hi%2C+notify+me+when+new+products+are+available." target="_blank" rel="noopener" class="product-card-cta" style="background:#f1f5f9;color:#64748b;">Notify Me on WhatsApp</a>
+            </div>
+          </article>
+          <!-- END COMING SOON CARD -->
+
+
+          <!-- ============================================================
+               COMING SOON CARD 3
+               ============================================================ -->
+          <article class="product-card coming-soon">
+            <div class="product-card-img">
+              <span class="product-card-badge badge-soon">Coming Soon</span>
+              <div style="width:100%;height:100%;background:linear-gradient(135deg,#f1f5f9,#e2e8f0);display:flex;align-items:center;justify-content:center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-category">Automotive</p>
+              <h3 class="product-card-name">New Product Coming Soon</h3>
+              <p class="product-card-desc">More premium automotive accessories launching soon. Follow us on WhatsApp for early access.</p>
+              <div class="product-card-pricing">
+                <span class="product-card-price" style="color:#94a3b8;">TBA</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <a href="https://wa.me/2348039940408?text=Hi%2C+notify+me+when+new+products+are+available." target="_blank" rel="noopener" class="product-card-cta" style="background:#f1f5f9;color:#64748b;">Notify Me on WhatsApp</a>
+            </div>
+          </article>
+          <!-- END COMING SOON CARD -->
+
+        </div><!-- /products-grid -->
       </div>
     </section>
 
-    <!-- 11. FREQUENTLY ASKED QUESTIONS -->
-    <section class="section" id="faq">
+    <!-- ==========================================
+         TRUST STRIP
+         ========================================== -->
+    <section class="trust-strip" id="trust">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Help & Answers</span>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-desc">Got questions before ordering? Here are clear answers to the most common questions from Nigerian drivers.</p>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item active">
-            <button type="button" class="faq-question">
-              <span>Can this jump start my car if the battery is completely dead?</span>
-              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer">
-              Yes! It delivers high-amperage cranking power directly to turn your engine over and start the vehicle immediately, even when your battery is completely drained.
-            </div>
+        <div class="trust-strip-grid">
+          <div class="trust-strip-item">
+            <span class="trust-strip-icon">&#x1F4E6;</span>
+            <strong>Free Delivery</strong>
+            <span>All 36 states &amp; FCT</span>
           </div>
-
-          <div class="faq-item">
-            <button type="button" class="faq-question">
-              <span>What happens if I accidentally connect the clamps backwards?</span>
-              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer">
-              Our smart clamps are equipped with built-in reverse-polarity protection. If you attach them backwards, the unit sounds an audible alert and prevents any current flow, meaning zero sparks, zero shocks, and zero damage to your vehicle.
-            </div>
+          <div class="trust-strip-item">
+            <span class="trust-strip-icon">&#x1F4B5;</span>
+            <strong>Pay on Delivery</strong>
+            <span>Cash or bank transfer</span>
           </div>
-
-          <div class="faq-item">
-            <button type="button" class="faq-question">
-              <span>How fast is delivery and how does Payment on Delivery work?</span>
-              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer">
-              Delivery takes 24–48 hours for Lagos and Abuja, and 2–3 business days for other states across Nigeria. When the dispatch rider arrives at your address, you open the package, inspect your order, and pay with cash or instant bank transfer.
-            </div>
+          <div class="trust-strip-item">
+            <span class="trust-strip-icon">&#x1F504;</span>
+            <strong>7-Day Replacement</strong>
+            <span>Defect? We replace it</span>
           </div>
-
-          <div class="faq-item">
-            <button type="button" class="faq-question">
-              <span>How do I recharge the jump starter after using it?</span>
-              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer">
-              You can recharge it easily using the included USB cable connected to your normal phone wall charger, computer USB port, or a car cigarette lighter adapter. A single full charge can jump start your car multiple times and holds charge in your glovebox for months.
-            </div>
+          <div class="trust-strip-item">
+            <span class="trust-strip-icon">&#x1F4DE;</span>
+            <strong>We Call First</strong>
+            <span>Confirmed before dispatch</span>
           </div>
-
-          <div class="faq-item">
-            <button type="button" class="faq-question">
-              <span>What is the difference between the Standard and Premium packages?</span>
-              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="faq-answer">
-              Both packages feature the exact same high-powered, reliable portable jump starter engine. The <strong>Standard Edition (₦59,900)</strong> comes with the jump starter unit, smart jumper clamps, cables, and charging accessories (Jump Starter only). The <strong>Premium 2-in-1 Combo (₦69,900)</strong> includes the full jump starter kit <strong>PLUS a dedicated High-Power Digital Electric Tire Inflator Pump</strong>, giving you complete protection against both dead car batteries AND flat tires anywhere you drive.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 12. FINAL HIGH-CONVERSION ORDER SECTION -->
-      <div style="background:#fefce8;border:1px solid #fde68a;border-left:4px solid #f59e0b;border-radius:8px;padding:0.9rem 1.25rem;margin:0 0 0;font-size:0.88rem;color:#92400e;font-weight:600;text-align:center;">&#x1F4CD; <strong>Outside Lagos?</strong> We deliver to all 36 states! <a href="https://wa.me/2348039940408?text=Hi%2C+I+am+outside+Lagos+and+I+would+like+to+order+the+Car+Jump+Starter." target="_blank" rel="noopener" style="color:#b45309;text-decoration:underline;font-weight:700;">WhatsApp us to confirm delivery &#x2192;</a></div>
-  <section class="section section-alt" id="order-form">
-      <div class="container">
-        <div class="section-header" style="margin-bottom: 2rem;">
-          <span class="section-tag">Direct Warehouse Dispatch</span>
-          <h2 class="section-title">Order Your Jump Starter Today</h2>
-          <p class="section-desc">Payment is 100% on delivery. Fill out your details below to confirm your order.</p>
-        </div>
-
-        <div class="checkout-wrapper">
-          <!-- Step 1: Edition Selector -->
-          <div class="edition-selection-block">
-            <div class="edition-block-header">
-              <span class="edition-step-badge">STEP 1</span>
-              <div>
-                <h3 class="edition-block-title">Select Your Preferred Edition</h3>
-                <p class="edition-block-subtitle">Click to select your package before entering delivery details:</p>
-              </div>
-            </div>
-
-            <div class="edition-cards-grid">
-              <!-- Standard Option -->
-              <label class="edition-card-label selected" for="formVariantStandard">
-                <input type="radio" id="formVariantStandard" name="formVariant" value="standard" checked>
-                <div class="edition-card-content">
-                  <div class="edition-card-top">
-                    <span class="edition-badge">STARTER ONLY</span>
-                    <strong class="edition-price">₦59,900</strong>
-                  </div>
-                  <h4 class="edition-title">Standard Edition (Jump Starter Only)</h4>
-                  <p class="edition-desc">Complete 12V emergency car battery jump starter kit (was <span style="text-decoration:line-through;">₦95,000</span>).</p>
-                  <div class="edition-features">
-                    <span>✓ High-power 12V Jump Starter unit</span>
-                    <span>✓ Smart spark-proof jumper clamps</span>
-                    <span>✓ Emergency LED torch & USB power bank</span>
-                    <span style="color: #94a3b8; text-decoration: line-through;">✕ Tire Inflator NOT Included</span>
-                  </div>
-                </div>
-              </label>
-
-              <!-- Premium Option -->
-              <label class="edition-card-label" for="formVariantPremium">
-                <input type="radio" id="formVariantPremium" name="formVariant" value="premium">
-                <div class="edition-card-content">
-                  <div class="edition-card-top">
-                    <span class="edition-badge edition-badge-pro">RECOMMENDED / 2-IN-1 COMBO</span>
-                    <strong class="edition-price">₦69,900</strong>
-                  </div>
-                  <h4 class="edition-title">Premium Combo (With Tire Inflator)</h4>
-                  <p class="edition-desc">Full jump starter kit + Digital Tire Inflator Pump (was <span style="text-decoration:line-through;">₦115,000</span>).</p>
-                  <div class="edition-features">
-                    <span>✓ High-power 12V Jump Starter unit</span>
-                    <span style="color: #2563eb; font-weight: 700;">✓ INCLUDES Digital Electric Tire Inflator</span>
-                    <span>✓ Smart spark-proof clamps & LED light</span>
-                    <span>✓ Fast USB power bank & storage case</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Step 2: Customer Delivery Details Form -->
-          <form id="orderForm">
-            <div class="form-header-divider">
-              <span class="edition-step-badge">STEP 2</span>
-              <h3 class="edition-block-title" style="margin-bottom: 0;">Enter Your Delivery Information</h3>
-            </div>
-
-            <div class="form-grid">
-              <!-- Quantity Selector -->
-              <div class="form-group">
-                <label class="form-label" for="orderQty">Select Quantity *</label>
-                <select class="form-select" id="orderQty">
-                  <option value="1">1 Unit</option>
-                  <option value="2">2 Units (For 2 cars / gift for family)</option>
-                  <option value="3">3 Units (Family & Fleet pack)</option>
-                  <option value="4">4 Units</option>
-                  <option value="5">5 Units</option>
-                </select>
-              </div>
-
-              <!-- Full Name -->
-              <div class="form-group">
-                <label class="form-label" for="fullName">Full Name *</label>
-                <input class="form-input" type="text" id="fullName" placeholder="e.g. Babatunde Adeleke" required autocomplete="name">
-              </div>
-
-              <!-- Phone Numbers & WhatsApp -->
-              <div class="form-grid-3 form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                <div class="form-group">
-                  <label class="form-label" for="phone">Phone Number (Call / SMS) *</label>
-                  <input class="form-input" type="tel" id="phone" placeholder="e.g. 08012345678" required autocomplete="tel">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="whatsapp">WhatsApp Number *</label>
-                  <input class="form-input" type="tel" id="whatsapp" placeholder="e.g. 08039940408" autocomplete="tel">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="altPhone">Alternative Phone Number (Optional)</label>
-                  <input class="form-input" type="tel" id="altPhone" placeholder="e.g. 09087654321" autocomplete="tel">
-                </div>
-              </div>
-
-              <!-- State & City -->
-              <div class="form-grid-2 form-grid">
-                <div class="form-group">
-                  <label class="form-label" for="state">Delivery State *</label>
-                  <select class="form-select" id="state" required>
-                    <option value="">Select Delivery State</option>
-                    <option value="Lagos">Lagos State (24–48h Delivery)</option>
-                    <option value="Abuja FCT">Abuja FCT (24–48h Delivery)</option>
-                    <option value="Rivers">Rivers State (Port Harcourt)</option>
-                    <option value="Oyo">Oyo State (Ibadan)</option>
-                    <option value="Kano">Kano State</option>
-                    <option value="Delta">Delta State (Warri / Asaba)</option>
-                    <option value="Ogun">Ogun State</option>
-                    <option value="Enugu">Enugu State</option>
-                    <option value="Anambra">Anambra State (Onitsha / Awka)</option>
-                    <option value="Kaduna">Kaduna State</option>
-                    <option value="Edo">Edo State (Benin City)</option>
-                    <option value="Imo">Imo State (Owerri)</option>
-                    <option value="Akwa Ibom">Akwa Ibom State (Uyo)</option>
-                    <option value="Other State">Other Nigerian State</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="city">City / Town / Area *</label>
-                  <input class="form-input" type="text" id="city" placeholder="e.g. Lekki, Ikeja, Gwarinpa, Wuse 2, GRA" required>
-                </div>
-              </div>
-
-              <!-- Address -->
-              <div class="form-group">
-                <label class="form-label" for="address">Full Delivery Address (Street & Nearest Landmark) *</label>
-                <textarea class="form-textarea" id="address" rows="3" placeholder="House/Flat number, Street name, Estate, Nearest bus stop or landmark..." required autocomplete="street-address"></textarea>
-              </div>
-
-              <!-- Order Summary Box -->
-              <div class="order-summary-box">
-                <div class="summary-row">
-                  <span>Selected Package:</span>
-                  <strong id="summaryVariant">Standard Edition (Qty: 1)</strong>
-                </div>
-                <div class="summary-row">
-                  <span>Package Price:</span>
-                  <span id="summaryPrice">₦59,900</span>
-                </div>
-                <div class="summary-row">
-                  <span>Delivery Fee:</span>
-                  <span style="color: #16a34a; font-weight: 700;">FREE Nationwide Delivery</span>
-                </div>
-                <div class="summary-row total">
-                  <span>Total Amount (Pay on Delivery):</span>
-                  <span id="summaryTotal" style="color: #2563eb;">₦59,900</span>
-                </div>
-              </div>
-
-              <!-- Submit Button -->
-                            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.25rem;padding:0.75rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;margin-bottom:1rem;font-size:0.82rem;font-weight:700;color:#15803d;text-align:center;">&#x2705; Pay Cash on Delivery &nbsp;&nbsp; &#x1F4E6; Free Nationwide Delivery &nbsp;&nbsp; &#x1F504; 7-Day Replacement Guarantee</div>
-              <button type="submit" class="btn btn-primary btn-full btn-order-submit pulse-btn" id="submitOrderBtn">
-                ORDER NOW &bull; PAY ON DELIVERY
-              </button>
-
-              <div style="text-align:center;margin:0.85rem 0 0.25rem;"><a href="https://wa.me/2348039940408?text=Hi%2C+I+want+to+order+the+Car+Jump+Starter+but+I+have+a+question." target="_blank" rel="noopener" style="font-size:0.9rem;font-weight:700;color:#16a34a;text-decoration:none;">&#x1F4AC; Not sure? Chat us on WhatsApp before ordering &#x2192;</a></div>
-              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.85rem; margin-top: 1rem; font-size: 0.82rem; color: #475569; line-height: 1.5; text-align: center;">
-                🔒 <strong>Zero Risk Reassurance:</strong> Inspect your package upon delivery before making payment via cash or instant bank transfer. Our dispatch team will call you before delivery.
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- MINIMAL FOOTER -->
-  <footer class="minimal-footer">
-    <p>AutoPower Nigeria — Reliable emergency automotive power devices delivered nationwide.</p>
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="home-footer">
+    <div class="container home-footer-inner">
+      <div class="home-footer-logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        AutoPower Nigeria
+      </div>
+      <div class="home-footer-links">
+        <a href="#products">Products</a>
+        <a href="jump-starter.html">Car Jump Starter</a>
+        <a href="https://wa.me/2348039940408" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+      <p class="home-footer-copy">&copy; 2026 AutoPower Nigeria. All rights reserved. Free nationwide delivery on all orders.</p>
+    </div>
   </footer>
 
-  <!-- STICKY MOBILE BOTTOM BAR (CONVERSION BOOSTER FOR MOBILE USERS) -->
-  <div class="sticky-mobile-bar" id="stickyMobileBar">
-    <div class="sticky-price-info">
-      <span class="sticky-label">Pay on Delivery</span>
-      <span class="sticky-price" id="stickyBarPrice">₦59,900</span>
-    </div>
-    <a href="#order-form" class="btn btn-primary sticky-cta-btn">
-      ORDER NOW &bull; FREE DELIVERY
-    </a>
-  </div>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/2348039940408?text=Hi%2C+I+want+to+know+more+about+your+products." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
-  <!-- Scripts: EmailJS loaded async (non-blocking); main.js deferred -->
-  <!-- FIX 4: async on EmailJS so it never blocks rendering or main.js -->
-  <script src="assets/js/emailjs.min.js" async></script>
-  <script src="assets/js/main.js" defer></script>
+  <!-- Mobile nav toggle -->
+  <script>
+    (function() {
+      var btn = document.getElementById('menuToggle');
+      var nav = document.getElementById('mobileNav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+      });
+      nav.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { nav.classList.remove('open'); });
+      });
+    })();
+  </script>
 
-  <!-- FIX 5: Meta Pixel deferred to end of body — zero render-blocking cost -->
-  <!-- Previously this was inline in <head>, causing ~200ms main thread block -->
+  <!-- Meta Pixel (deferred 1s after load — zero render-blocking) -->
   <script>
   window.addEventListener('load', function() {
-  setTimeout(function() {
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '446510071587010');
-    fbq('track', 'PageView');
-  }, 1000);
+    setTimeout(function() {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '446510071587010');
+      fbq('track', 'PageView');
+    }, 1000);
   });
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=446510071587010&ev=PageView&noscript=1"
   /></noscript>
+
 </body>
 </html>
